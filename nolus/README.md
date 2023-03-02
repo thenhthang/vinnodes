@@ -21,7 +21,7 @@ Snapshots are taken automatically every 12 hours.
 > rm -rf $HOME/.nolus/data
 
 **Download latest snapshot **
-curl -L http://185.193.67.93/nolus/nolus-risnapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
+curl -L http://185.193.67.93/nolus/nolus-rila_snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 
 **Restart the service and check the log**
