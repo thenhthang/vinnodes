@@ -8,6 +8,11 @@ Snapshots allows a new node to join the network by recovering application state 
 
 Snapshots are taken automatically every 12 hours.
 
+| Date | Block Height |
+| ------ | ------ |
+| 2323/03/01 18:00:00 | [plugins/dropbox/README.md][PlDb] |
+| GitHub | [plugins/github/README.md][PlGh] |
+
 **pruning**: 100/0/19 | **indexer**: null | **version** tag: v0.1.43
 
 > Last snapshot block height: http://185.193.67.93/nolus_log.txt
