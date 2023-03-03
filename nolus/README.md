@@ -1,17 +1,16 @@
 # NOLUS SNAPSHOT
 
-## Catch the latest block faster by using our daily snapshots.
+## We take a node snapshot every day. We then delete all the previous snapshots to free up the space on the file server.
 
 <sub>
 Snapshots allows a new node to join the network by recovering application state from a backup file. Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, snapshot server is periodically beeing state-synced.
 </sub>
 
-Snapshots are taken automatically every 12 hours.
+Snapshots are taken automatically every day at 00:00.
 
-| Date | Block Height |
-| ------ | ------ |
-| 2323/03/01 18:00:00 | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
+| Latest | Date | Block Height | Size | Download
+| ------ | ------ | ------ | ------ | ------ |
+| yes | 2023-03-02_17:42:37 | 1206255 | 40GB | "acb"
 
 **pruning**: 100/0/19 | **indexer**: null | **version** tag: v0.1.43
 
