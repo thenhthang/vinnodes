@@ -16,7 +16,7 @@ Snapshots allows a new node to join the network by recovering application state 
 
 > Snapshots logs: http://185.193.67.93/nolus_log.txt
 
-**GUIDE**
+**How to start a node from a snapshot**
 
 > Stop the service
 ```sh
