@@ -10,7 +10,8 @@ Snapshots allows a new node to join the network by recovering application state 
 
 | Latest | Date | Block Height | Size | Download
 | ------ | ------ | ------ | ------ | ------ |
-| yes | 2023-03-02_17:42:37 | 1206255 | 40GB | http://185.193.67.93/nolus/nolus-rila_snapshot_latest.tar.lz4
+| no | 2023-03-02_17:42:37 | 1206255 | 40G | http://185.193.67.93/nolus/nolus-rila_snapshot_latest.tar.lz4
+| yes | 2023-03-04_02:12:50 | 1223495 | 5.1G | http://185.193.67.93/nolus/nolus-rila_snapshot_latest.tar.lz4
 
 ## SDK Version: v0.1.43
 
