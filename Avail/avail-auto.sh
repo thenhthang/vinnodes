@@ -48,7 +48,6 @@ echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 # download binary
 git clone https://github.com/availproject/avail.git
 cd avail
-mkdir -p output
 mkdir -p data
 git checkout v1.7.2
 cargo build --release -p data-avail
