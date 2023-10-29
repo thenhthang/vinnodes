@@ -27,7 +27,7 @@ Recommended
 >- 4core CPU (amd64/x86 architecture)
 >- 200-300 GB Storage (SSD)
 ```
-- While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
+<font color="red">While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.</font>
 ```
 ## Set up your Avail Validator
 ### Option 1 (automatic)
