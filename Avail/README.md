@@ -73,6 +73,7 @@ cd avail
 mkdir -p data
 git checkout v1.7.2
 cargo build --release -p data-avail
+sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
 ```
 ## Create service
 ```
