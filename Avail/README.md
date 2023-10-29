@@ -4,7 +4,7 @@
 <a href="https://radió.com/" target="_blank">Visit our website <img src="https://github.com/thenhthang/vinnodes/blob/main/content/logo.jpg?raw=true" width="30"/></a>
 </p>
 <p align="center">
-  <img height="100" height="auto" src="https://user-images.githubusercontent.com/50621007/199199328-32dcdc7c-db06-4519-827f-6c6af09228f9.png">
+  <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/avail.png?raw=true">
 </p>
 # Avial Tesnet (Validator)
 
