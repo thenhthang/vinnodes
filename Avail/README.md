@@ -15,6 +15,8 @@ Official documentation:
 Explorer:
 >- https://telemetry.avail.tools
 >- https://kate.avail.tools/
+Fill form for validator test: 
+>- https://docs.google.com/forms/d/e/1FAIpQLScvgXjSUmwPpUxf1s-MR2C2o5V79TSoud1dLPKVgeLiLFuyGQ/viewform
 
 ## Recommended Hardware Requirements 
 Minimum
