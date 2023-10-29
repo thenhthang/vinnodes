@@ -26,10 +26,9 @@ Recommended
 >- 8GB RAM
 >- 4core CPU (amd64/x86 architecture)
 >- 200-300 GB Storage (SSD)
-<p style="color:red">
-While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
-</p>
-
+```
+- While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
+```
 ## Set up your Avail Validator
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
