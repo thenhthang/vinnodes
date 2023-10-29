@@ -52,7 +52,7 @@ mkdir -p data
 git checkout v1.7.2
 cargo build --release -p data-avail
 . $HOME/.bash_profile
-
+sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
 # create service
 sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
 [Unit]
