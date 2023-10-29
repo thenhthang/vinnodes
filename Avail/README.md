@@ -6,6 +6,7 @@
 <p align="center">
   <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/avail.png?raw=true">
 </p>
+
 # Avial Tesnet (Validator)
 
 Official documentation:
