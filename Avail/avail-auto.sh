@@ -20,7 +20,7 @@ if [ ! $NODENAME ]; then
 	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 source $HOME/.bash_profile
-echo "export NIBIRU_PORT=${AVAIL_PORT}" >> $HOME/.bash_profile
+echo "export AVAIL_PORT=${AVAIL_PORT}" >> $HOME/.bash_profile
 echo '================================================='
 echo -e "Your node name: \e[1m\e[32m$NODENAME\e[0m"
 echo -e "Your port: \e[1m\e[32m$AVAIL_PORT\e[0m"
