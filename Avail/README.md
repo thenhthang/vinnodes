@@ -18,6 +18,7 @@ Minimum
 >- 4GB RAM
 >- 2core CPU (amd64/x86 architecture)
 >- 20-40 GB Storage (SSD)
+
 Recommended
 >- 8GB RAM
 >- 4core CPU (amd64/x86 architecture)
@@ -27,8 +28,69 @@ Recommended
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-wget -O rebus.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/rebus/rebus.sh && chmod +x rebus.sh && ./rebus.sh
+wget -O avail-auto.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/rebus/rebus.sh && chmod +x avail-auto.sh && ./avail-auto.sh
 ```
 
 ### Option 2 (manual)
-You can follow [manual guide](https://github.com/kj89/testnet_manuals/blob/main/rebus/manual_install.md) if you better prefer setting up node manually
+# Setting up vars
+Here you have to put name of your moniker (validator) that will be visible in explorer
+```
+NODENAME=<YOUR_MONIKER_NAME_GOES_HERE>
+```
+Save and import variables into system
+```
+AVAIL_PORT=30333
+echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
+echo "export AVAIL_PORT=${AVAIL_PORT}" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+# Update packages
+```
+sudo apt update && sudo apt upgrade -y
+```
+# Install dependencies
+```
+sudo apt install curl tar wget clang pkg-config protobuf-compiler libssl-dev jq build-essential protobuf-compiler bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```
+# Install Rust
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.cargo/env
+rustup default stable
+rustup update
+rustup update nightly
+rustup target add wasm32-unknown-unknown --toolchain nightly
+```
+# Download and build binaries
+```
+git clone https://github.com/availproject/avail.git
+cd avail
+mkdir -p output
+mkdir -p data
+git checkout v1.7.2
+cargo build --release -p data-avail
+```
+# Create service
+```
+sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
+[Unit]
+Description=Avail Validator
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which data-avail) --validator --port 30333 --base-path `pwd`/data --chain kate --name $NODENAME
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+# Register and start service
+```
+sudo systemctl daemon-reload
+sudo systemctl enable availd
+sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
+```
