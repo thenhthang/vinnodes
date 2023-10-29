@@ -33,7 +33,7 @@ Recommended
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-wget -O avail-auto.sh https://github.com/thenhthang/vinnodes/blob/main/Avail/avail-auto.sh && chmod +x avail-auto.sh && ./avail-auto.sh
+wget -O avail-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-auto.sh && chmod +x avail-auto.sh && ./avail-auto.sh
 ```
 
 ### Option 2 (manual)
