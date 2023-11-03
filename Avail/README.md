@@ -32,7 +32,7 @@ Recommended
 ```diff
 - While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
 ```
-## Set up your Avail Validator
+## Set up your Avail Node
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
