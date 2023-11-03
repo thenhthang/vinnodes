@@ -7,7 +7,7 @@
   <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/avail.png?raw=true">
 </p>
 
-# Avial Tesnet (Validator)
+# Avial Tesnet (Full Node)
 
 Official documentation:
 >- https://github.com/availproject/avail
