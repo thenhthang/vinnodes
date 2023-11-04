@@ -89,31 +89,31 @@ sudo systemctl enable availightd
 sudo systemctl restart availightd
 ```
 ## Logs and Monitor
-# View the logs from the running service: 
+### View the logs from the running service: 
 ```
 journalctl -f -u availightd.service
 ```
-# Fetching the number of the latest block processed by light client
+### Fetching the number of the latest block processed by light client
 ```
 curl "http://localhost:7000/v1/latest_block"
 ```
-# Fetching the confidence for given block
+### Fetching the confidence for given block
 ```
 curl "http://localhost:7000/v1/confidence/1"
 ```
-# Fetching decoded application data for given block
+### Fetching decoded application data for given block
 ```
 curl "http://localhost:7000/v1/appdata/1?decode=true"
 ```
-# Get the status of a latest block
+### Get the status of a latest block
 ```
 curl "localhost:7000/v1/status"
 ```
-# Get the latest block
+### Get the latest block
 ```
 curl "localhost:7000/v1/latest_block"
 ```
-# Health check
+### Health check
 ```
 curl -I "localhost:7000/health"
 ```
