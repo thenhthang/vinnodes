@@ -32,7 +32,7 @@ Recommended
 
 ## Set up your Avail Light Node
 ### Option 1 (automatic)
-You can setup your avail light node in few minutes by using automated script below. It will prompt you to input your validator node name!
+You can setup your avail light node in few minutes by using automated script below.
 ```
 wget -O avail-light.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-light.sh && chmod +x avail-light.sh && ./avail-light.sh
 ```
