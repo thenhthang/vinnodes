@@ -88,3 +88,5 @@ sudo systemctl daemon-reload
 sudo systemctl enable availightd
 sudo systemctl restart availightd
 ```
+## Logs
+>- View the logs from the running service:: journalctl -f -u availight.service'
