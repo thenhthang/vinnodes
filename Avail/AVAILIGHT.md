@@ -117,3 +117,5 @@ curl "localhost:7000/v1/latest_block"
 ```
 curl -I "localhost:7000/health"
 ```
+### More
+>- https://github.com/availproject/avail-light#configuration-reference
