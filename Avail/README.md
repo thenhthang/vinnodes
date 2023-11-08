@@ -33,11 +33,13 @@ Recommended
 ```diff
 - While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
 ```
-| Network |Version |Current |
+| Network | Version | Current | Last modified |
 |---------------|-------------|-------------|
-| **Kate Testnet** | v1.7.2 | Yes |
-| **Goldberg Testnet** | v1.8.0.0 | No |
-
+| **Kate Testnet** | v1.7.2 | No |  |
+| **Goldberg Testnet** | v1.8.0.0 | Yes | 2023/11/08 |
+```
+Ports used: 30333
+```
 ## Set up your Avail Node
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
@@ -80,7 +82,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 git clone https://github.com/availproject/avail.git
 cd avail
 mkdir -p data
-git checkout v1.7.2
+git checkout v1.8.0.0
 cargo build --release -p data-avail
 sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
 ```
@@ -93,7 +95,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which data-avail) --validator --port 30333 --base-path `pwd`/data --chain kate --name $NODENAME
+ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -108,3 +110,5 @@ sudo systemctl daemon-reload
 sudo systemctl enable availd
 sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 ```
+### Before you can become an active validator, you need to bond your funds to your node. 
+>- Stake your validator: https://docs.availproject.org/operate/validator/staking
