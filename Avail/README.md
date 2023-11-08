@@ -33,9 +33,9 @@ Recommended
 ```diff
 - While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
 ```
-| Network |Version |Current |Last modified |
-|---------------|-------------|-------------|
-| **Kate Testnet** | v1.7.2 | No | y |
+| Network | Version | Current | Last modified |
+|---------------|-------------|-------------|-------------|
+| **Kate Testnet** | v1.7.2 | No |  |
 | **Goldberg Testnet** | v1.8.0.0 | Yes | 2023/11/08 |
 ```
 Ports used: 30333
