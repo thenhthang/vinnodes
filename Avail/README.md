@@ -10,6 +10,7 @@
 # Avial Tesnet (Full Node)
 
 Official documentation:
+>- https://docs.availproject.org/
 >- https://github.com/availproject/avail
 
 Explorer:
@@ -32,6 +33,11 @@ Recommended
 ```diff
 - While Avail is currently in its testnet phase, running validator nodes requires significant system administration expertise.
 ```
+| Network |Version |Current |
+|---------------|-------------|-------------|
+| **Kate Testnet** | v1.7.2 | Yes |
+| **Goldberg Testnet** | v1.8.0.0 | No |
+
 ## Set up your Avail Node
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
