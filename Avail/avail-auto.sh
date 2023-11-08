@@ -47,7 +47,7 @@ echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 git clone https://github.com/availproject/avail.git
 cd avail
 mkdir -p data
-git checkout v1.7.2
+git checkout v1.8.0.0
 cargo build --release -p data-avail
 . $HOME/.bash_profile
 sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
@@ -59,7 +59,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which data-avail) --validator --port 30333 --base-path `pwd`/data --chain kate --name $NODENAME
+ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
