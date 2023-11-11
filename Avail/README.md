@@ -40,7 +40,7 @@ Recommended
 ```
 Ports used: 30333
 ```
-## Set up your Avail Node
+## Step 1: Set up your Avail Node
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
@@ -112,3 +112,6 @@ sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 ```
 ### Before you can become an active validator, you need to bond your funds to your node. 
 >- Stake your validator: https://docs.availproject.org/operate/validator/staking
+## Step 2: Create wallet and Set Identity
+## Step 3: Control your full node account
+>- Step 2 and step 3 read guide here: https://docs.availproject.org/operate/validator/staking
