@@ -11,18 +11,24 @@ Fill in all information and confirm
 ## Step 3: Controll your full node
 Official documentation: https://docs.availproject.org/operate/validator/staking
 
-Create Stash
+- Create Stash
 <img width="1440" alt="image" src="https://github.com/thenhthang/vinnodes/assets/16117878/20a11727-8b4f-43e9-89e1-785206188e03">
 <img width="1085" alt="image" src="https://github.com/thenhthang/vinnodes/assets/16117878/793db9cb-1c13-4c39-9582-6e43cb4aca7a">
-Submit seesion keys
+- Submit seesion keys
+  
 **After your node is fully synced, you'll need to rotate and submit your session keys.**
+
 get hex-encoded, run command on your machine
+
 ```
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
 ```
 Navigate back to the Staking tab.
+
 Click on **Set Session Key** and enter the hex-encoded result.
+
 Click **Set Session Key** and enter your password when prompted.
+
 ![image](https://github.com/thenhthang/vinnodes/assets/16117878/85cb24a6-d9da-4ef2-a70d-03782fd43c58)
 
 
