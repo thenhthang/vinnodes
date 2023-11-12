@@ -16,7 +16,8 @@ Official documentation:
 Explorer:
 >- https://telemetry.avail.tools
 >- https://goldberg.avail.tools
-
+LeaderBoard:
+>- https://leaderboard.availproject.org
 Fill form for validator test: 
 >- https://docs.google.com/forms/d/e/1FAIpQLScvgXjSUmwPpUxf1s-MR2C2o5V79TSoud1dLPKVgeLiLFuyGQ/viewform
 
@@ -115,3 +116,5 @@ sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 ## Step 2: Create wallet and Set Identity
 ## Step 3: Control your full node account
 >- Step 2 and step 3 read guide here: https://docs.availproject.org/operate/validator/staking
+
+Question: <a href="https://t.me/vinnodeschat" target="_blank">VinNodes Chat</a>
