@@ -21,10 +21,16 @@ Official documentation: https://docs.availproject.org/operate/validator/staking
   
 **After your node is fully synced, you'll need to rotate and submit your session keys.**
 
+Make sure your node is fully synchronized to continue
+
 get hex-encoded, run command on your machine
 
 ```
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
+```
+Restart your node
+```
+
 ```
 Navigate back to the Staking tab.
 
