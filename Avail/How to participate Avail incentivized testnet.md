@@ -30,7 +30,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 ```
 Restart your node
 ```
-
+sudo systemctl restart availd
 ```
 Navigate back to the Staking tab.
 
