@@ -54,7 +54,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart availd
 
 echo '=============== Update success ==================='
-echo -e 'View the logs from the running service:: journalctl -f -u availd.service'
+echo -e 'View the logs from the running service: journalctl -f -u availd.service'
 echo -e "Check the node is running: sudo systemctl status availd.service"
 echo -e "Stop your avail node: sudo systemctl stop availd.service"
 echo -e "Start your avail node: sudo systemctl start availd.service"
