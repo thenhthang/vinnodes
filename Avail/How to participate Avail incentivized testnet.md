@@ -1,5 +1,5 @@
 ## Step 1: Run a Full node
-Read guide: https://github.com/thenhthang/vinnodes/blob/main/Avail/README.md
+Read guide: https://github.com/Bangyan1997/Yanz_StakeNode/blob/main/Avail/README.md
 ## Step 2: Create account & Set Identity
 - Create account
   
