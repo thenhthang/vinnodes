@@ -44,7 +44,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which avail-light) --config $HOME/avail-light/config.yaml --network biryani
+ExecStart=$(which avail-light) --config $HOME/avail-light/config.yaml --network goldberg
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
