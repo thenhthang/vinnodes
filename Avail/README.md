@@ -16,11 +16,9 @@ Official documentation:
 Explorer:
 >- https://telemetry.avail.tools
 >- https://goldberg.avail.tools
-LeaderBoard:
-
+>- LeaderBoard:
 >- https://leaderboard.availproject.org
-Fill form for validator test:
-
+>- Fill form for validator test:
 >- https://docs.google.com/forms/d/e/1FAIpQLScvgXjSUmwPpUxf1s-MR2C2o5V79TSoud1dLPKVgeLiLFuyGQ/viewform
 
 ## Recommended Hardware Requirements 
