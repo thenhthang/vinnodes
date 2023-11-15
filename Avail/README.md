@@ -39,7 +39,7 @@ Recommended
 | Network | Version | Current | Last modified |
 |---------------|-------------|-------------|-------------|
 | **Kate Testnet** | v1.7.2 | No |  |
-| **Goldberg Testnet** | v1.8.0.0 | Yes | 2023/11/08 |
+| **Goldberg Testnet** | v1.8.0.2 | Yes | 2023/11/08 |
 ```
 Ports used: 30333
 ```
