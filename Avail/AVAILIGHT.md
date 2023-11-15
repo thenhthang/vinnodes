@@ -7,7 +7,7 @@
   <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/avail.png?raw=true">
 </p>
 
-# Avail Light Client (Light Node)
+# Avail Light Client - Goldberg network
 
 Official documentation:
 >- https://github.com/availproject/avail
@@ -60,9 +60,9 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 git clone https://github.com/availproject/avail-light.git
 cd avail-light
 wget -O config.yaml https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/config.yaml
-git checkout v1.7.2
+git checkout v1.7.3
 cargo build --release
-sudo cp $HOME/avail-light/target/release/avail-light /usr/local/bin
+cp -r target/release/avail-light /usr/local/bin
 ```
 ## Create service
 ```
@@ -73,7 +73,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which avail-light) --config $HOME/avail-light/config.yaml --network biryani
+ExecStart=$(which avail-light) --config $HOME/avail-light/config.yaml --network goldberg
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
