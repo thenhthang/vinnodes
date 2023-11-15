@@ -1,12 +1,11 @@
-### VinNodes TestnetRun
+### Yanz_Stake TestnetRun
 
 ## About
 
-Telegram: https://t.me/vinnodes
+Telegram: https://t.me/LEGOindo
 
-Website: https://radió.vn
+Website: on process
 
-X: https://x.com/vinnodes
+X: https://twitter.com/Bangyan66401750
 
-Ad: https://t.me/wolfgangad
 

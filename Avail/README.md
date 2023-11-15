@@ -1,13 +1,13 @@
 <p style="font-size:14px" align="right">
-<a href="https://t.me/vinnodes" target="_blank">Join our telegram <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/></a>
-<a href="https://discord.gg/dvNSrwyU" target="_blank">Join our discord <img src="https://user-images.githubusercontent.com/50621007/176236430-53b0f4de-41ff-41f7-92a1-4233890a90c8.png" width="30"/></a>
-<a href="https://radió.vn" target="_blank">Visit our website <img src="https://github.com/thenhthang/vinnodes/blob/main/content/logo.jpg?raw=true" width="30"/></a>
+<a href="https://t.me/LEGOindo" target="_blank">Join our telegram <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/></a>
+<a href="[https://discord.gg/dvNSrwyU](https://discord.gg/jPF4AXUn)" target="_blank">Join our discord <img src="https://user-images.githubusercontent.com/50621007/176236430-53b0f4de-41ff-41f7-92a1-4233890a90c8.png" width="30"/></a>
+<a href="https://availproject.org/" target="_blank"?raw=true" width="30"/></a>
 </p>
 <p align="center">
   <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/avail.png?raw=true">
 </p>
 
-# Avial Validator
+# Avail Validator
 
 Official documentation:
 >- https://docs.availproject.org/
@@ -20,6 +20,9 @@ LeaderBoard:
 >- https://leaderboard.availproject.org
 Fill form for validator test: 
 >- https://docs.google.com/forms/d/e/1FAIpQLScvgXjSUmwPpUxf1s-MR2C2o5V79TSoud1dLPKVgeLiLFuyGQ/viewform
+>- 
+Fill form for light Client:
+>-https://docs.google.com/forms/d/e/1FAIpQLSeL6aXqz6vBbYEgD1cZKaQ4vwbN2o3Rxys-wKTuKySVR-oS8g/viewform
 
 ## Recommended Hardware Requirements 
 Minimum
@@ -45,7 +48,7 @@ Ports used: 30333
 ### Option 1 (automatic)
 You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-wget -O avail-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-auto.sh && chmod +x avail-auto.sh && ./avail-auto.sh
+wget -O avail-auto.sh https://raw.githubusercontent.com/Bangyan1997/Yanz_Stake/main/Avail/avail-auto.sh && chmod +x avail-auto.sh && ./avail-auto.sh
 ```
 
 ### Option 2 (manual)
@@ -124,6 +127,6 @@ wget -O avail-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main
 >- Stake your validator: https://docs.availproject.org/operate/validator/staking
 ## Step 2: Create wallet and Set Identity
 ## Step 3: Control your full node account
->- Step 2 and step 3 read guide here: https://github.com/thenhthang/vinnodes/blob/main/Avail/How%20to%20participate%20Avail%20incentivized%20testnet.md
+>- Step 2 and step 3 read guide here: https://github.com/Bangyan1997/Yanz_StakeNode/blob/main/Avail/How%20to%20participate%20Avail%20incentivized%20testnet.md
 
-Question: <a href="https://t.me/vinnodeschat" target="_blank">VinNodes Chat</a>
+Question: <a href="https://t.me/@LEGOindo" target="_blank">LEGOindo Chat</a>
