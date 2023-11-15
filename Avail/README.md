@@ -21,7 +21,7 @@ Explorer:
 >- Fill form for validator test:
 >- https://docs.google.com/forms/d/e/1FAIpQLScvgXjSUmwPpUxf1s-MR2C2o5V79TSoud1dLPKVgeLiLFuyGQ/viewform
 
-## Recommended Hardware Requirements 
+## Hardware Requirements 
 Minimum
 >- 4GB RAM
 >- 2core CPU (amd64/x86 architecture)
