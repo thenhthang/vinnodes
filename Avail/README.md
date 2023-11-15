@@ -118,7 +118,7 @@ sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 >- Start your avail node: sudo systemctl start availd.service
 ## Update to latest version
 ```
-wget -O avail-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-update.sh && chmod +x avail-update.sh && ./avail-update.sh
+wget -O avail-update.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-update.sh && chmod +x avail-update.sh && ./avail-update.sh
 ```
 ### Before you can become an active validator, you need to bond your funds to your node. 
 >- Stake your validator: https://docs.availproject.org/operate/validator/staking
