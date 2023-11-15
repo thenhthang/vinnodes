@@ -118,6 +118,6 @@ sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 >- Stake your validator: https://docs.availproject.org/operate/validator/staking
 ## Step 2: Create wallet and Set Identity
 ## Step 3: Control your full node account
->- Step 2 and step 3 read guide here: https://github.com/thenhthang/vinnodes/blob/main/Avail/How%20to%20participate%20Avail%20incentivized%20testnet.md
+>- Step 2 and step 3 read guide here: https://github.com/Bangyan1997/Yanz_StakeNode/blob/main/Avail/How%20to%20participate%20Avail%20incentivized%20testnet.md
 
-Question: <a href="https://t.me/vinnodeschat" target="_blank">VinNodes Chat</a>
+Question: <a href="https://t.me/@LEGOindo" target="_blank">LEGOindo Chat</a>
