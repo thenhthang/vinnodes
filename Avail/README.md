@@ -83,7 +83,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 git clone https://github.com/availproject/avail.git
 cd avail
 mkdir -p data
-git checkout v1.8.0.0
+git checkout v1.8.0.2
 cargo build --release -p data-avail
 sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
 ```
