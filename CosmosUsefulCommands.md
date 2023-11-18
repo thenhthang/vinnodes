@@ -1,4 +1,5 @@
-#Create new validator
+#### Create new validator
+```
 ojod tx staking create-validator \
 --amount 1000000uojo \
 --pubkey $(ojod tendermint show-validator) \
@@ -16,7 +17,9 @@ ojod tx staking create-validator \
 --gas auto \
 --gas-prices 0uojo \
 -y
-#Edit validator
+```
+#### Edit validator
+```
 ojod tx staking edit-validator \
 --new-moniker "YOUR_MONIKER_NAME" \
 --identity "YOUR_KEYBASE_ID" \
@@ -29,11 +32,12 @@ ojod tx staking edit-validator \
 --gas auto \
 --gas-prices 0uojo \
 -y
-**
+```
+```
 nolusd tx staking edit-validator \
   --new-moniker="VinnodesNolus" \
   --details="We are from vinnodes.Operation worldwide" \
   --chain-id=nolus-rila \
   --fees=600unls \
   --from=noluswallet
- 
+ ```
