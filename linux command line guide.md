@@ -12,5 +12,5 @@ cp path/tenfile.abc path/tenfilemoi.abc
 ```
 #### Check port use
 ```
- netstat -anp|grep avail
+ netstat -anp|grep tenprogame
 ```
