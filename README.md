@@ -3,7 +3,7 @@
 ### About
 
 >- Telegram: https://t.me/vinnodes
->- Website: https://radió.vn
+>- Website: https://vinnodes.com
 >- X: https://x.com/vinnodes
->- Ad: https://t.me/wolfgangad
+>- Email: vinnodes@gmail.com
 
