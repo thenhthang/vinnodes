@@ -41,3 +41,16 @@ nolusd tx staking edit-validator \
   --fees=600unls \
   --from=noluswallet
  ```
+#### Crom job auto withdraw all rewards and redelegate to your validator
+```
+0 1 * * * bash ojodelegate.sh
+30 0 * * * ojod tx distribution withdraw-rewards $(ojod keys show wallet --bech val -a) --commission --from wallet --chain-id ojo-devnet --gas-adjustment 1.4 --gas auto --gas-prices 0uojo -y
+```
+#### Jailing info
+```
+entangled q slashing signing-info $(entangled tendermint show-validator)
+```
+#### Unjail validator
+```
+entangled tx slashing unjail --broadcast-mode block --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
+```
