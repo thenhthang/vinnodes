@@ -17,10 +17,10 @@ cp path/tenfile.abc path/tenfilemoi.abc
 #### Kiem tra port dang su dung boi chuong trinh nao
 ```
 netstat -anp|grep portnumber
+```
 #### Xuat thong tin port dang duoc su dung
 ```
 sudo netstat -tulpn | grep LISTEN
-```
 ```
 #### Cac lenh xu ly file
 ```
