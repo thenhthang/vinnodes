@@ -47,7 +47,7 @@ echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 git clone https://github.com/availproject/avail.git
 cd avail
 mkdir -p data
-git checkout v1.8.0.2
+git checkout v1.8.0.3
 cargo build --release -p data-avail
 . $HOME/.bash_profile
 sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
