@@ -17,6 +17,9 @@ Fill in all information and confirm
 <img width="900" alt="image" src="https://github.com/thenhthang/vinnodes/assets/16117878/1c3a5b40-d052-49be-b9b4-972d240f1157">
 
 If you run a Full node, continue step 3
+
+More info clash of node: https://docs.availproject.org/clash-of-nodes/challenges/
+
 ## Step 3: Controll your full node
 Official documentation: https://docs.availproject.org/operate/validator/staking
 
