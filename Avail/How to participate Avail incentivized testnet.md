@@ -15,6 +15,8 @@ You need 10 AVAIL tokens for identification, faucet on discord
 <img width="1437" alt="image" src="https://github.com/thenhthang/vinnodes/assets/16117878/b7ad0b47-08fc-48d7-af73-e09426e7190c">
 Fill in all information and confirm
 <img width="900" alt="image" src="https://github.com/thenhthang/vinnodes/assets/16117878/1c3a5b40-d052-49be-b9b4-972d240f1157">
+
+If you run a Full node, continue step 3
 ## Step 3: Controll your full node
 Official documentation: https://docs.availproject.org/operate/validator/staking
 
