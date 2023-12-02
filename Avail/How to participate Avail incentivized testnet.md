@@ -4,7 +4,6 @@ Full node: https://github.com/thenhthang/vinnodes/blob/main/Avail/README.md
 Light node:
 https://github.com/thenhthang/vinnodes/blob/main/Avail/AVAILIGHT.md
 
-If you run a full node, continue Step 2
 ## Step 2: Create account & Set Identity
 - Create account
   
