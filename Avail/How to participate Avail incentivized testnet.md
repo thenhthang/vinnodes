@@ -1,5 +1,7 @@
-## Step 1: Run a Full node
-Read guide: https://github.com/thenhthang/vinnodes/blob/main/Avail/README.md
+## Step 1: Run a Node
+Full node: https://github.com/thenhthang/vinnodes/blob/main/Avail/README.md
+Light node:
+https://github.com/thenhthang/vinnodes/blob/main/Avail/AVAILIGHT.md
 ## Step 2: Create account & Set Identity
 - Create account
   
