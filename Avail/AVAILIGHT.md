@@ -93,6 +93,10 @@ sudo systemctl restart availightd
 ```
 journalctl -f -u availightd.service
 ```
+### Stop node
+```
+sudo systemctl stop availightd
+```
 ### Fetching the number of the latest block processed by light client
 ```
 curl "http://localhost:7000/v1/latest_block"
