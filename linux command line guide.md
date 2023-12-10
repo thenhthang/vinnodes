@@ -18,6 +18,10 @@ cp path/tenfile.abc path/tenfilemoi.abc
 ```
 netstat -anp|grep portnumber
 ```
+### Liet ke tat ca cac file va thu muc kem kich thuoc
+```
+du -h --max-depth=1 --block-size=1M .*
+```
 #### Xuat thong tin port dang duoc su dung
 ```
 sudo netstat -tulpn | grep LISTEN
