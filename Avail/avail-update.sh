@@ -27,7 +27,7 @@ sleep 2
 sudo systemctl stop availd.service
 cd avail
 git pull
-git checkout v1.9.0.0
+git checkout v1.10.0.0
 cargo build --release -p data-avail
 . $HOME/.bash_profile
 sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
