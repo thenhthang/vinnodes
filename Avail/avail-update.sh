@@ -39,7 +39,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME
+ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME --unsafe-da-sync
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
