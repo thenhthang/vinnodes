@@ -127,6 +127,7 @@ mkdir db
 mkdir network
 cd db
 mkdir full
+cd full
 curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C .
 cd
 ```
