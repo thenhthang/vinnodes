@@ -116,9 +116,48 @@ sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
 >- Check the node is running: sudo systemctl status availd.service
 >- Stop your avail node: sudo systemctl stop availd.service
 >- Start your avail node: sudo systemctl start availd.service
-## Update to latest version
+## Update from old version to v1.10.0.0
+Step 1
+```
+sudo systemctl stop availd
+cd avail/data/chains/avail_goldberg_testnet
+rm -rf db
+rm -rf network
+mkdir db
+mkdir network
+cd db
+mkdir full
+curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C .
+cd
+```
+Step 2
 ```
 wget -O avail-update.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-update.sh && chmod +x avail-update.sh && ./avail-update.sh
+```
+Step 3: After full sync (Please check you node is full sync before execute this step
+Find your node on https://telemetry.avail.tools
+```
+sudo systemctl stop availd
+```
+```
+sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
+[Unit]
+Description=Avail Validator
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+```
+sudo systemctl start availd
 ```
 ### Before you can become an active validator, you need to bond your funds to your node. 
 >- Stake your validator: https://docs.availproject.org/operate/validator/staking
