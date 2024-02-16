@@ -166,4 +166,4 @@ sudo systemctl start availd
 ## Step 3: Control your full node account
 >- Step 2 and step 3 read guide here: https://github.com/thenhthang/vinnodes/blob/main/Avail/How%20to%20participate%20Avail%20incentivized%20testnet.md
 
-Question: <a href="https://t.me/vinnodeschat" target="_blank">VinNodes Chat</a>
+Question: <a href="https://t.me/nodesrunnervnchat" target="_blank">VinNodes Chat</a>
