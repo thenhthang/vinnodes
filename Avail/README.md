@@ -160,6 +160,10 @@ EOF
 ```
 sudo systemctl start availd
 ```
+## Update from old version to v1.11.0.0
+```
+wget -O avail-update.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-update.sh && chmod +x avail-update.sh && ./avail-update.sh
+```
 ### Before you can become an active validator, you need to bond your funds to your node. 
 >- Stake your validator: https://docs.availproject.org/operate/validator/staking
 ## Step 2: Create wallet and Set Identity
