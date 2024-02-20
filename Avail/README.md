@@ -37,7 +37,7 @@ Recommended
 | Network | Version | Current | Last modified |
 |---------------|-------------|-------------|-------------|
 | **Kate Testnet** | v1.7.2 | No |  |
-| **Goldberg Testnet** | v1.10.0.0 | Yes | 2024/02/03 |
+| **Goldberg Testnet** | 1.11.0.0 | Yes | 2024/02/20 |
 ```
 Ports used: 30333
 ```
@@ -83,7 +83,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 git clone https://github.com/availproject/avail.git
 cd avail
 mkdir -p data
-git checkout v1.8.0.3
+git checkout v1.11.0.0
 cargo build --release -p data-avail
 sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
 ```
