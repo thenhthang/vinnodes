@@ -4,7 +4,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 #### Install depaendencies
 ```
-sudo apt install curl tar wget clang pkg-config protobuf-compiler libssl-dev jq build-essential protobuf-compiler bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+sudo apt install curl tar wget clang pkg-config protobuf-compiler libssl-dev jq build-essential protobuf-compiler bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y snapd
 ```
 #### Install Rust
 ```
