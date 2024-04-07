@@ -1,3 +1,7 @@
+#### Thay doi timezone
+```
+sudo timedatectl set-timezone UTC
+```
 #### Giai nen
 ```
 tar -xzvf file-name.tar
