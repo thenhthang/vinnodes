@@ -135,11 +135,11 @@ sudo journalctl -u initiad -f -o cat
 ```
 initiad keys add $WALLET_NAME
 ```
-### DO NOT FORGET TO SAVE THE SEED PHRASE
+#### DO NOT FORGET TO SAVE THE SEED PHRASE
 #### You can add --recover flag to restore existing key instead of creating
 ### Faucet: https://faucet.testnet.initia.xyz
 ## Check your wallet balance
-### Make sure your node is fully synced unless it won't work.
+#### Make sure your node is fully synced unless it won't work.
 ```
 initiad status | jq -r .sync_info
 ```
@@ -160,14 +160,107 @@ initiad tx mstaking create-validator \
   --from=$WALLET_NAME \
   --identity="" \
   --website="" \
-  --details="Initia to the moon!" \
+  --details="I love Initia!" \
   --gas=2000000 --fees=300000uinit \
   -y
 ```
 ## Done
-## Logs
->- View the logs from the running service: journalctl -f -u initiad.service
->- Check the node is running: sudo systemctl status initiad.service
->- Stop your avail node: sudo systemctl stop initiad.service
->- Start your avail node: sudo systemctl start initiad.service
+
+## Useful commands
+### Check node status 
+```bash
+initiad status | jq
+```
+### Query your validator
+```bash
+initiad q mstaking validator $(initiad keys show $WALLET_NAME --bech val -a) 
+```
+### Query missed blocks counter & jail details of your validator
+```bash
+initiad q slashing signing-info $(initiad tendermint show-validator)
+```
+### Unjail your validator 
+```bash
+initiad tx slashing unjail --from $WALLET_NAME --gas=2000000 --fees=300000uinit -y
+```
+### Delegate tokens to your validator 
+```bash 
+initiad tx mstaking delegate $(initiad keys show $WALLET_NAME --bech val -a)  <AMOUNT>uinit --from $WALLET_NAME --gas=2000000 --fees=300000uinit -y
+```
+### Get your p2p peer address
+```bash
+initiad status | jq -r '"\(.NodeInfo.id)@\(.NodeInfo.listen_addr)"'
+```
+### Edit your validator
+```bash 
+initiad tx mstaking edit-validator --website="<WEBSITE>" --details="<DESCRIPTION>" --moniker="<NEW_MONIKER>" --from=$WALLET_NAME --gas=2000000 --fees=300000uinit -y
+```
+### Send tokens between wallets 
+```bash
+initiad tx bank send $WALLET_NAME <TO_WALLET> <AMOUNT>uinit --gas=2000000 --fees=300000uinit -y
+```
+### Query your wallet balance 
+```bash
+initiad q bank balances $WALLET_NAME
+```
+### Monitor server load
+```bash 
+sudo apt update
+sudo apt install htop -y
+htop
+```
+### Query active validators
+```bash
+initiad q mstaking validators -o json --limit=1000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
+| jq -r '.voting_power + " - " + .description.moniker' \
+| sort -gr | nl
+```
+### Query inactive validators
+```bash
+initiad q mstaking validators -o json --limit=1000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
+| jq -r '.voting_power + " - " + .description.moniker' \
+| sort -gr | nl
+```
+### Check logs of the node
+```bash
+sudo journalctl -u initiad -f -o cat
+```
+### Check the node is running
+```
+sudo systemctl status initiad.service
+```
+### Restart the node
+```bash
+sudo systemctl restart initiad
+```
+### Stop the node
+```bash
+sudo systemctl stop initiad
+```
+### Delete the node from the server
+```bash
+# !!! IF YOU HAVE CREATED A VALIDATOR, MAKE SURE TO BACKUP `priv_validator_key.json` file located in $HOME/.initia/config/ 
+sudo systemctl stop initiad
+sudo systemctl disable initiad
+sudo rm /etc/systemd/system/initiad.service
+rm -rf $HOME/.initia
+sudo rm /usr/local/bin/initiad
+```
+### Example gRPC usage
+```bash
+wget https://github.com/fullstorydev/grpcurl/releases/download/v1.7.0/grpcurl_1.7.0_linux_x86_64.tar.gz
+tar -xvf grpcurl_1.7.0_linux_x86_64.tar.gz
+chmod +x grpcurl
+./grpcurl  -plaintext  localhost:$GRPC_PORT list
+### MAKE SURE gRPC is enabled in app.toml
+# grep -A 3 "\[grpc\]" $HOME/.initia/config/app.toml
+```
+### Example REST API query
+```bash
+curl localhost:$API_PORT/cosmos/mstaking/v1beta1/validators
+### MAKE SURE API is enabled in app.toml
+# grep -A 3 "\[api\]" $HOME/.initia/config/app.toml
+```
 
