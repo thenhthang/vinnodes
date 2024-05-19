@@ -36,7 +36,7 @@ It is recommended to use Linux OS to run Initia nodes. Running Initia node has n
 |---------------|-------------|-------------|-------------|
 | **Initia testnet** | v0.2.15 | Yes |  |
 
-## Step 1: Set up your Initia validator
+# Step I: Set up your Initia FullNode
 ### Option 1 (automatic)
 You can setup your initia validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
@@ -130,8 +130,41 @@ sudo systemctl enable initiad && \
 sudo systemctl restart initiad && \
 sudo journalctl -u initiad -f -o cat
 ```
-# DONE
-
+# Step 2: Create validator
+## Create wallet
+```
+initiad keys add $WALLET_NAME
+```
+### DO NOT FORGET TO SAVE THE SEED PHRASE
+#### You can add --recover flag to restore existing key instead of creating
+### Faucet: https://faucet.testnet.initia.xyz
+## Check your wallet balance
+### Make sure your node is fully synced unless it won't work.
+```
+initiad status | jq -r .sync_info
+```
+```
+initiad q bank balances $(initiad keys show $WALLET_NAME -a) 
+```
+## Create validator
+### Make sure your node is fully synced unless it won't work.
+```
+initiad tx mstaking create-validator \
+  --amount=1000000uinit \
+  --pubkey=$(initiad tendermint show-validator) \
+  --moniker=$MONIKER \
+  --chain-id=$CHAIN_ID \
+  --commission-rate=0.05 \
+  --commission-max-rate=0.10 \
+  --commission-max-change-rate=0.01 \
+  --from=$WALLET_NAME \
+  --identity="" \
+  --website="" \
+  --details="Initia to the moon!" \
+  --gas=2000000 --fees=300000uinit \
+  -y
+```
+## Done
 ## Logs
 >- View the logs from the running service: journalctl -f -u initiad.service
 >- Check the node is running: sudo systemctl status initiad.service
