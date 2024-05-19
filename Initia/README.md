@@ -263,4 +263,7 @@ curl localhost:$API_PORT/cosmos/mstaking/v1beta1/validators
 ### MAKE SURE API is enabled in app.toml
 # grep -A 3 "\[api\]" $HOME/.initia/config/app.toml
 ```
+## If you see this error, don't worry, wait 5-10 mins for the system find good peers.
+<img width="1168" alt="image" src="https://github.com/thenhthang/vinnodes/assets/16117878/29adc4bf-1eb5-41b4-a284-e310ab392a24">
+
 
