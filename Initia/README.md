@@ -11,11 +11,15 @@
 
 Official documentation:
 >- https://docs.initia.xyz/run-initia-node/running-initia-node
+
 Faucet:
 >- https://faucet.testnet.initia.xyz
+
 Submit Google form:
 >- https://docs.google.com/forms/d/e/1FAIpQLSc09Kl6mXyZHOL12n_6IUA8MCcL6OqzTqsoZn9N8gpptoeU_Q/viewform
+
 Folow this link and complete all validator task:
+
 >- https://initia-xyz.notion.site/The-Initiation-Validator-Tasks-6d88ab0034644473907435662f9285b3?p=a1520303c75a4997a65c89e9f2148a00&pm=s
 
 ## Hardware Requirements 
@@ -36,7 +40,7 @@ It is recommended to use Linux OS to run Initia nodes. Running Initia node has n
 ### Option 1 (automatic)
 You can setup your initia validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
-wget -O avail-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Initia/initia-auto.sh && chmod +x initia-auto.sh && ./initia-auto.sh
+wget -O initia-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Initia/initia-auto.sh && chmod +x initia-auto.sh && ./initia-auto.sh
 ```
 
 ### Option 2 (manual)
