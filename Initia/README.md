@@ -34,7 +34,7 @@ It is recommended to use Linux OS to run Initia nodes. Running Initia node has n
 ```
 | Network | Version | Current | Last modified |
 |---------------|-------------|-------------|-------------|
-| **Initia testnet** | v0.2.15 | Yes |  |
+| **initiation-1** | v0.2.15 | Yes |  |
 
 # Step I: Set up your Initia FullNode
 ### Option 1 (automatic)
