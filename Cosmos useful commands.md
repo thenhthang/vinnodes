@@ -54,3 +54,12 @@ entangled q slashing signing-info $(entangled tendermint show-validator)
 ```
 entangled tx slashing unjail --broadcast-mode block --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
+#### Chuyển validator sang server khác
+
+B1. Tại server mới: Chạy fullnode mới , chờ đồng bộ hoàn toàn (không cần tạo validator)
+B2. Dừng node ở server cũ, dừng node ở server mới
+Copy các file sau từ server cũ sang server mới:
+/config/node_key.json
+/config/priv_validator_key.json
+/data/priv_validator_state.json
+B3. Restart node ở server mới (Done)
