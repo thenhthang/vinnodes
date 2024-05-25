@@ -1,4 +1,4 @@
-## VinNodes TestnetRun
+## NodesRunner Communities
 
 ### About
 
