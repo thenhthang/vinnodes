@@ -57,9 +57,27 @@ entangled tx slashing unjail --broadcast-mode block --from $WALLET --chain-id en
 #### Chuyển validator sang server khác
 
 B1. Tại server mới: Chạy fullnode mới , chờ đồng bộ hoàn toàn (không cần tạo validator)
+
 B2. Dừng node ở server cũ, dừng node ở server mới
+
 Copy các file sau từ server cũ sang server mới:
+
 /config/node_key.json
+
 /config/priv_validator_key.json
+
 /data/priv_validator_state.json
+
 B3. Restart node ở server mới (Done)
+
+#### How to change your json-rpc setting and How to check your json-rpc endpoint
+Open your app.toml file with command
+nano $HOME/.0gchain/config/app.toml
+Change your json-rpc settings like below
+1) 127.0.0.1:8545  to  0.0.0.0:8545
+2) Change your api method from api = "eth,net,web3"   to   api = "eth,txpool,personal,net,debug,web3"
+re-execute your validator node with restart service command
+sudo systemctl restart xxxd
+Check your endpoint with below commands
+1) check your rpc's current block height 
+curl -X POST http ://YOUR_SERVER_IP:8545 -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
