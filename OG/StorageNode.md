@@ -43,7 +43,7 @@ You can use your own rpc-end-point or use any rpc below:
 ### Faucet token before install: https://faucet.0g.ai
 ### Please check rpc still working before install 
 ```
-curl -X POST https://rpc-testnet.0g.ai -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+curl -X POST <YOUR_RPC_END_POINT> -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```
 If you see the same, it's working
 ![alt text](image.png)
@@ -61,6 +61,6 @@ ls ~/0g-storage-node/run/log/
 ```
 tail -f ~/0g-storage-node/run/log/zgs.log.$(date +%Y-%m-%d)
 ```
-If you see same, the installation was successful
+If you see the same, the installation was successful
 
 ![alt text](image-1.png)
