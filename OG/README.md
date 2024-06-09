@@ -29,7 +29,7 @@ Minimum
 |---------------|-------------|-------------|-------------|
 | **zgtendermint_16600-1** | v0.1.0 | Yes |  |
 
-# Step I: Set up your Initia FullNode
+# Step I: Set up your OG FullNode
 ### Option 1 (automatic)
 You can setup your OG validator in few minutes by using automated script below. It will prompt you to input your validator node name!
 ```
