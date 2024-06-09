@@ -138,7 +138,7 @@ echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex |
 0gchaind status | jq .SyncInfo.catching_up
 ```
 ```
-initiad q bank balances $(initiad keys show $WALLET_NAME -a) 
+0gchaind q bank balances $(0gchaind keys show $WALLET_NAME -a) 
 ```
 ## Create validator
 ### Make sure your node is fully synced unless it won't work.
