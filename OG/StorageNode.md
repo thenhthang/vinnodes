@@ -28,36 +28,36 @@ Minimum
 | Network | Version | Current | Last modified |
 |---------------|-------------|-------------|-------------|
 | **zgtendermint_16600-1** | v0.2.0 | Yes |  |
-
-## You can setup your OG Storage Node in few minutes by using automated script below.
-## It will prompt you to input your EVM PRIVATE KEY and your BLOCKCHAIN RPC ENDPOIT!
-### Get evm private key
+# Install
+### You can setup your OG Storage Node in few minutes by using automated script below.
+### It will prompt you to input your EVM PRIVATE KEY and your BLOCKCHAIN RPC ENDPOIT!
+#### Get evm private key
 Open metamask wallet > Account details > Show private key
-### List rpc endpoint
+#### List rpc endpoint
 You can use your own rpc-end-point or use any rpc below:
 - https://rpc-testnet.0g.ai
 - https://evm-rpc-0g.mflow.tech
 - https://0g-rpc.dongqn.com
 - https://og-testnet-jsonrpc.blockhub.id
 
-### Faucet token before install: https://faucet.0g.ai
-### Please check rpc still working before install 
+#### Faucet token before install: https://faucet.0g.ai
+#### Please check rpc still working before install 
 ```
 curl -X POST <YOUR_RPC_END_POINT> -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```
 If you see the same, it's working
 ![alt text](image.png)
-## Ok, let's go, setup storage node automatic with one command
+### Ok, let's go, setup storage node automatic with one command
 ```
 wget -O ogstorage-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/OG/ogstorage-auto.sh && chmod +x ogstorage-auto.sh && ./ogstorage-auto.sh
 ```
 # Useful commands
 
-## check your log list
+#### check your log list
 ```
 ls ~/0g-storage-node/run/log/
 ```
-## check your last log
+#### check your last log
 ```
 tail -f ~/0g-storage-node/run/log/zgs.log.$(date +%Y-%m-%d)
 ```
