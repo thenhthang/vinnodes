@@ -231,3 +231,5 @@ sudo rm /etc/systemd/system/0gd.service
 rm -rf $HOME/.0gchain
 sudo rm /usr/local/bin/0gchain
 ```
+
+Question: <a href="https://t.me/nodesrunnerguruchat" target="_blank">NodesRunner Chat</a>
