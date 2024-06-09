@@ -64,3 +64,5 @@ tail -f ~/0g-storage-node/run/log/zgs.log.$(date +%Y-%m-%d)
 If you see the same, the installation was successful
 
 ![alt text](image-1.png)
+
+Question: <a href="https://t.me/nodesrunnerguruchat" target="_blank">NodesRunner Chat</a>
