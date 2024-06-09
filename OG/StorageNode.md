@@ -31,19 +31,21 @@ Minimum
 
 # You can setup your OG Storage Node in few minutes by using automated script below.
 ## It will prompt you to input your EVM PRIVATE KEY and your BLOCKCHAIN RPC ENDPOIT!
-## Get evm private key
+### Get evm private key
 Open metamask wallet > Account details > Show private key
-## List rpc endpoint
-You can use your own rpc end point or use any rpc below
+### List rpc endpoint
+You can use your own rpc-end-point or use any rpc below:
 - https://rpc-testnet.0g.ai
 - https://evm-rpc-0g.mflow.tech
 - https://0g-rpc.dongqn.com
 - https://og-testnet-jsonrpc.blockhub.id
-## Please rpc is work or not before install 
+
+### Faucet token before install: https://faucet.0g.ai
+### Please check rpc still working before install 
 ```
 curl -X POST https://rpc-testnet.0g.ai -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```
-If you see same, it's working
+If you see the same, it's working
 ![alt text](image.png)
 # Ok, let's go, setup storage node automatic with one command
 ```
