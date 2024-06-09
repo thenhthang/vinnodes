@@ -30,7 +30,7 @@ Minimum
 | **zgtendermint_16600-1** | v0.2.0 | Yes |  |
 # Install
 ### You can setup your OG Storage Node in few minutes by using automated script below.
-### It will prompt you to input your EVM PRIVATE KEY and your BLOCKCHAIN RPC ENDPOIT!
+### It will prompt you to input your EVM_PRIVATE_KEY and your BLOCKCHAIN_RPC_ENDPOIT!
 #### Get evm private key
 Open metamask wallet > Account details > Show private key
 #### List rpc endpoint
