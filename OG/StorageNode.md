@@ -61,3 +61,6 @@ ls ~/0g-storage-node/run/log/
 ```
 tail -f ~/0g-storage-node/run/log/zgs.log.$(date +%Y-%m-%d)
 ```
+If you see same, the installation was successful
+
+![alt text](image-1.png)
