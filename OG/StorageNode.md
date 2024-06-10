@@ -52,7 +52,10 @@ If you see the same, it's working
 wget -O ogstorage-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/OG/ogstorage-auto.sh && chmod +x ogstorage-auto.sh && ./ogstorage-auto.sh
 ```
 # Useful commands
-
+#### restart node
+```
+sudo systemctl restart zgs
+```
 #### check your log list
 ```
 ls ~/0g-storage-node/run/log/
