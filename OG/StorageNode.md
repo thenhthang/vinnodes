@@ -39,6 +39,7 @@ You can use your own rpc-end-point or use any rpc below:
 - https://evm-rpc-0g.mflow.tech
 - https://0g-rpc.dongqn.com
 - https://og-testnet-jsonrpc.blockhub.id
+- https://0gevmrpc.nodebrand.xyz
 
 #### Faucet token before install: https://faucet.0g.ai
 #### Please check rpc still working before install 
