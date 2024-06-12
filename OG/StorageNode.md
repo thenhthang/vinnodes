@@ -57,6 +57,10 @@ wget -O ogstorage-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/
 ```
 sudo systemctl restart zgs
 ```
+#### stop node
+```
+sudo systemctl stop zgs
+```
 #### check your log list
 ```
 ls ~/0g-storage-node/run/log/
