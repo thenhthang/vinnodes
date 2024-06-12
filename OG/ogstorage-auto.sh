@@ -57,7 +57,7 @@ echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 
 # download binary
 
-git clone -b v0.2.0 https://github.com/0glabs/0g-storage-node.git
+git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
 
 # build
 cd $HOME/0g-storage-node
