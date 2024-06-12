@@ -27,7 +27,7 @@ Minimum
 
 | Network | Version | Current | Last modified |
 |---------------|-------------|-------------|-------------|
-| **zgtendermint_16600-1** | v0.2.0 | Yes |  |
+| **zgtendermint_16600-1** | v0.3.0 | Yes |  |
 # Install
 ### You can setup your OG Storage Node in few minutes by using automated script below.
 ### It will prompt you to input your EVM_PRIVATE_KEY and your BLOCKCHAIN_RPC_ENDPOIT!
