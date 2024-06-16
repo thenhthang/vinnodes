@@ -23,7 +23,7 @@ go build
 ## Step 2: Upload
 #### Make a sample.txt file
 ```
-sudo tee ./sample1.txt > /dev/null <<EOF
+sudo tee ./sample.txt > /dev/null <<EOF
 OG To the moon. NodesRunner number 1.
 EOF
 ```
