@@ -1,4 +1,4 @@
-# How to download and upload file using StorageNodeCLI.md
+# How to download and upload file using Storage Node CLI
 ## Step 1: Install Storage Node CLI
 #### Install golang
 ```
