@@ -6,6 +6,7 @@
 <p align="center">
   <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/oglogo.png?raw=true">
 </p>
+
 # How to download and upload file using Storage Node CLI
 ## Step 1: Install Storage Node CLI
 #### Install golang
