@@ -64,3 +64,5 @@ _Example (If you use default port)_
 # Check transaction
 
 https://chainscan-newton.0g.ai
+
+Question: <a href="https://t.me/nodesrunnerguruchat" target="_blank">NodesRunner Chat</a>
