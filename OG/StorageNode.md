@@ -70,6 +70,10 @@ ls ~/0g-storage-node/run/log/
 tail -f ~/0g-storage-node/run/log/zgs.log.$(date +%Y-%m-%d)
 ```
 If you see the same, the installation was successful
+#### check version
+```
+$HOME/0g-storage-node/target/release/zgs_node --version
+```
 
 ![alt text](image-1.png)
 
