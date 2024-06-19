@@ -70,6 +70,10 @@ Copy các file sau từ server cũ sang server mới:
 
 B3. Restart node ở server mới (Done)
 
+#### Download file from vps
+
+scp username@IP:/username/filename ./
+
 #### How to change your json-rpc setting and How to check your json-rpc endpoint
 Open your app.toml file with command
 nano $HOME/.0gchain/config/app.toml
