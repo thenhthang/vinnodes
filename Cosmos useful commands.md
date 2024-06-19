@@ -72,7 +72,11 @@ B3. Restart node ở server mới (Done)
 
 #### Download file from vps
 
-scp username@IP:/username/filename ./
+scp USER@IP:/USER/path_to_file ./
+
+#### Upload file to vps
+
+scp path_to_file USER@IP:/USER/path_to_file
 
 #### How to change your json-rpc setting and How to check your json-rpc endpoint
 Open your app.toml file with command
