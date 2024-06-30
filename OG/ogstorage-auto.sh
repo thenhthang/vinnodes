@@ -20,9 +20,9 @@ if [ ! $BLOCKCHAIN_RPC_ENDPOINT ]; then
 	read -p "Enter your BLOCKCHAIN_RPC_ENDPOINT: " BLOCKCHAIN_RPC_ENDPOINT
 	echo 'export BLOCKCHAIN_RPC_ENDPOINT=$BLOCKCHAIN_RPC_ENDPOINT' >> $HOME/.bash_profile
 fi
-echo 'export LOG_CONTRACT_ADDRESS="0xb8F03061969da6Ad38f0a4a9f8a86bE71dA3c8E7"' >> ~/.bash_profile
-echo 'export MINE_CONTRACT="0x96D90AAcb2D5Ab5C69c1c351B0a0F105aae490bE"' >> ~/.bash_profile
-echo 'export ZGS_LOG_SYNC_BLOCK="445493"' >> ~/.bash_profile
+echo 'export LOG_CONTRACT_ADDRESS="0x8873cc79c5b3b5666535C825205C9a128B1D75F1"' >> ~/.bash_profile
+echo 'export MINE_CONTRACT="0x85F6722319538A805ED5733c5F4882d96F1C7384"' >> ~/.bash_profile
+echo 'export ZGS_LOG_SYNC_BLOCK="802"' >> ~/.bash_profile
 source ~/.bash_profile
 echo -e "LOG_CONTRACT_ADDRESS: $LOG_CONTRACT_ADDRESS\nMINE_CONTRACT: $MINE_CONTRACT\nZGS_LOG_SYNC_BLOCK: $ZGS_LOG_SYNC_BLOCK\n\n\033[33mby Nodebrand.\033[0m"
 sleep 2
@@ -57,7 +57,7 @@ echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 
 # download binary
 
-git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
+git clone -b v0.3.2 https://github.com/0glabs/0g-storage-node.git
 
 # build
 cd $HOME/0g-storage-node
