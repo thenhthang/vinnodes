@@ -216,7 +216,7 @@ sudo systemctl status 0gd.service
 ```
 ### Restart the node
 ```bash
-sudo systemctl restart 0gd
+sudo systemctl restart 0gd && sudo journalctl -u 0gd -f -o cat
 ```
 ### Stop the node
 ```bash
