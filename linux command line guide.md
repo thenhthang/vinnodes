@@ -22,6 +22,10 @@ cp path/tenfile.abc path/tenfilemoi.abc
 ```
 netstat -anp|grep portnumber
 ```
+#### Lay IP
+```
+EXTERNAL_IP=$(wget -qO- eth0.me)
+```
 ### Liet ke tat ca cac file va thu muc kem kich thuoc
 ```
 du -h --max-depth=1 --block-size=1M .*
