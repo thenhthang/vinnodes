@@ -49,7 +49,7 @@ echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 
 # download binary
 
-git clone -b v0.1.0 https://github.com/0glabs/0g-chain.git
+git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
 cd 0g-chain
 make install
 0gchaind version
@@ -68,7 +68,9 @@ wget https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json -O
 
 # add seed and peer
 
-SEEDS="c4d619f6088cb0b24b4ab43a0510bf9251ab5d7f@54.241.167.190:26656,44d11d4ba92a01b520923f51632d2450984d5886@54.176.175.48:26656,f2693dd86766b5bf8fd6ab87e2e970d564d20aff@54.193.250.204:26656,f878d40c538c8c23653a5b70f615f8dccec6fb9f@54.215.187.94:26656" && \
+rm ~/.0gchain/config/genesis.json
+wget -P ~/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json
+SEEDS="81987895a11f6689ada254c6b57932ab7ed909b6@54.241.167.190:26656,010fb4de28667725a4fef26cdc7f9452cc34b16d@54.176.175.48:26656,e9b4bc203197b62cc7e6a80a64742e752f4210d5@54.193.250.204:26656,68b9145889e7576b652ca68d985826abd46ad660@18.166.164.232:26656" && \
 sed -i.bak -e "s/^seeds *=.*/seeds = \"${SEEDS}\"/" $HOME/.0gchain/config/config.toml
 	
 # set min gas price
