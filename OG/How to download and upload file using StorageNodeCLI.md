@@ -40,7 +40,7 @@ EOF
 ```
 ./0g-storage-client upload \
 --url YOUR_BLOKCHAIN_RPC_ENPOINT \
---contract 0xb8F03061969da6Ad38f0a4a9f8a86bE71dA3c8E7 \
+--contract 0x8873cc79c5b3b5666535C825205C9a128B1D75F1 \
 --key YOUR_STORAGE_NODE_PRIVATE_KEY \
 --node YOUR_STORAGENODE_RPC_ENTPOINT \
 --file sample.txt
@@ -49,7 +49,7 @@ _Example (If you use default port)_
 ```
 ./0g-storage-client upload \
 --url http://IP:8545 \
---contract 0xb8F03061969da6Ad38f0a4a9f8a86bE71dA3c8E7 \
+--contract 0x8873cc79c5b3b5666535C825205C9a128B1D75F1 \
 --key 6ab820c603exxxxxxxxxxxxxxxxxxxxxxxxxxxxx00b02157ea40bf \
 --node http://IP:5678 \
 --file sample.txt
