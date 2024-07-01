@@ -12,20 +12,13 @@ echo -e "\e[0m"
 sleep 2
 
 # set vars
-if [ ! $PRIVATE_KEY ]; then
-	read -p "Enter your evm private key: " PRIVATE_KEY
-	echo 'export PRIVATE_KEY=$PRIVATE_KEY' >> $HOME/.bash_profile
-fi
-if [ ! $BLOCKCHAIN_RPC_ENDPOINT ]; then
-	read -p "Enter your BLOCKCHAIN_RPC_ENDPOINT: " BLOCKCHAIN_RPC_ENDPOINT
-	echo 'export BLOCKCHAIN_RPC_ENDPOINT=$BLOCKCHAIN_RPC_ENDPOINT' >> $HOME/.bash_profile
-fi
-echo 'export LOG_CONTRACT_ADDRESS="0x8873cc79c5b3b5666535C825205C9a128B1D75F1"' >> ~/.bash_profile
-echo 'export MINE_CONTRACT="0x85F6722319538A805ED5733c5F4882d96F1C7384"' >> ~/.bash_profile
-echo 'export ZGS_LOG_SYNC_BLOCK="802"' >> ~/.bash_profile
+read -p "Enter your evm private key: " PRIVATE_KEY
+echo 'export PRIVATE_KEY=$PRIVATE_KEY' >> $HOME/.bash_profile
+read -p "Enter your BLOCKCHAIN_RPC_ENDPOINT: " BLOCKCHAIN_RPC_ENDPOINT
+echo 'export BLOCKCHAIN_RPC_ENDPOINT=$BLOCKCHAIN_RPC_ENDPOINT' >> $HOME/.bash_profile
+MYIP=$(wget -qO- eth0.me)
+echo 'export MYIP=$MYIP' >> $HOME/.bash_profile
 source ~/.bash_profile
-echo -e "LOG_CONTRACT_ADDRESS: $LOG_CONTRACT_ADDRESS\nMINE_CONTRACT: $MINE_CONTRACT\nZGS_LOG_SYNC_BLOCK: $ZGS_LOG_SYNC_BLOCK\n\n\033[33mby Nodebrand.\033[0m"
-sleep 2
 
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
 # update
@@ -67,27 +60,18 @@ cargo build --release
 
 # update config
 sed -i '
-s|# network_dir = "network"|network_dir = "network"|
-s|# network_enr_tcp_port = 1234|network_enr_tcp_port = 1234|
-s|# network_enr_udp_port = 1234|network_enr_udp_port = 1234|
+s|network_enr_address = ""|network_enr_address = "'$MYIP'"|
 s|# network_libp2p_port = 1234|network_libp2p_port = 1234|
-s|# network_discovery_port = 1234|network_discovery_port = 1234|
-s|# rpc_enabled = true|rpc_enabled = true|
+s|# rpc_listen_address = "0.0.0.0:5678"|rpc_listen_address = "0.0.0.0:5678"|
+s|network_boot_nodes = [".*"]|network_boot_nodes = ["/ip4/54.219.26.22/udp/1234/p2p/16Uiu2HAmTVDGNhkHD98zDnJxQWu3i1FL1aFYeh9wiQTNu4pDCgps","/ip4/52.52.127.117/udp/1234/p2p/16Uiu2HAkzRjxK2gorngB1Xq84qDrT4hSVznYDHj6BkbaE4SGx9oS"]|
+s|^log_contract_address = ".*"|log_contract_address = "0x8873cc79c5b3b5666535C825205C9a128B1D75F1"|
+s|^mine_contract_address = ".*"|mine_contract_address = "0x85F6722319538A805ED5733c5F4882d96F1C7384"|
+s|^blockchain_rpc_endpoint = ".*"|blockchain_rpc_endpoint = "'$BLOCKCHAIN_RPC_ENDPOINT'"|
 s|# db_dir = "db"|db_dir = "db"|
-s|# log_config_file = "log_config"|log_config_file = "log_config"|
-s|# log_directory = "log"|log_directory = "log"|
+s|# rpc_enabled = true|rpc_enabled = true|
+s|# network_dir = "network"|network_dir = "network"|
+s|^miner_key = ""|miner_key = "'$PRIVATE_KEY'"|
 ' $HOME/0g-storage-node/run/config.toml
-
-sed -i '
-s|^network_boot_nodes = \".*\"|network_boot_nodes = \["/ip4/54.219.26.22/udp/1234/p2p/16Uiu2HAmTVDGNhkHD98zDnJxQWu3i1FL1aFYeh9wiQTNu4pDCgps","/ip4/52.52.127.117/udp/1234/p2p/16Uiu2HAkzRjxK2gorngB1Xq84qDrT4hSVznYDHj6BkbaE4SGx9oS"\]|
-s|^log_contract_address = ".*"|log_contract_address = "'"$LOG_CONTRACT_ADDRESS"'"|
-s|^mine_contract_address = ".*"|mine_contract_address = "'"$MINE_CONTRACT"'"|
-s|^log_sync_start_block_number = .*|log_sync_start_block_number = '"$ZGS_LOG_SYNC_BLOCK"'|
-' $HOME/0g-storage-node/run/config.toml
-
-sed -i "s|^blockchain_rpc_endpoint = \".*\"|blockchain_rpc_endpoint = \"$BLOCKCHAIN_RPC_ENDPOINT\"|" $HOME/0g-storage-node/run/config.toml
-sed -i 's|^miner_key = ""|miner_key = "'"$PRIVATE_KEY"'"|' $HOME/0g-storage-node/run/config.toml
-
 
 # create service
 
