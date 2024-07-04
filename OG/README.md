@@ -166,7 +166,7 @@ echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex |
 
 ### Check node status 
 ```bash
-0gchaind status | jq .SyncInfo
+0gchaind status | jq .syncinfo
 ```
 ### Query your validator
 ```bash
