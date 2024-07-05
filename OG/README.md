@@ -96,7 +96,7 @@ sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ua0gi\"/" $HOME/.0gch
 ```
 ## Create service
 ```
-sudo tee /etc/systemd/system/0gd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/0gchaind.service > /dev/null <<EOF
 [Unit]
 Description=0G Node
 After=network.target
@@ -115,9 +115,9 @@ EOF
 ## Register and start service
 ```
 sudo systemctl daemon-reload && \
-sudo systemctl enable 0gd && \
-sudo systemctl restart 0gd && \
-sudo journalctl -u 0gd -f -o cat
+sudo systemctl enable 0gchaind && \
+sudo systemctl restart 0gchaind && \
+sudo journalctl -u 0gchaind -f -o cat
 ```
 # Step 2: Create validator
 ## Create wallet
@@ -166,7 +166,7 @@ echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex |
 
 ### Check node status 
 ```bash
-0gchaind status | jq .syncinfo
+0gchaind status | jq .sync_info
 ```
 ### Query your validator
 ```bash
@@ -208,26 +208,26 @@ htop
 ```
 ### Check logs of the node
 ```bash
-sudo journalctl -u 0gd -f -o cat
+sudo journalctl -u 0gchaind -f -o cat
 ```
 ### Check the node is running
 ```
-sudo systemctl status 0gd.service
+sudo systemctl status 0gchaind.service
 ```
 ### Restart the node
 ```bash
-sudo systemctl restart 0gd && sudo journalctl -u 0gd -f -o cat
+sudo systemctl restart 0gchaind && sudo journalctl -u 0gchaind -f -o cat
 ```
 ### Stop the node
 ```bash
-sudo systemctl stop 0gd
+sudo systemctl stop 0gchaind
 ```
 ### Delete the node from the server
 ```bash
 # !!! IF YOU HAVE CREATED A VALIDATOR, MAKE SURE TO BACKUP `priv_validator_key.json` file located in $HOME/.0gchain/config/ 
-sudo systemctl stop 0gd
-sudo systemctl disable 0gd
-sudo rm /etc/systemd/system/0gd.service
+sudo systemctl stop 0gchaind
+sudo systemctl disable 0gchaind
+sudo rm /etc/systemd/system/0gchaind.service
 rm -rf $HOME/.0gchain
 sudo rm /usr/local/bin/0gchain
 ```
