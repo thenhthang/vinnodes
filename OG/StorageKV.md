@@ -26,8 +26,9 @@ Minimum
 >- Bandwidth: 500 MBps for Download / Upload
 
 # Install
+### This guide is used for installation storage node and storage kv on the same server.
 ### You can setup your OG Storage KV in few minutes by using automated script below.
-### It will prompt you to input your BLOCKCHAIN_RPC_ENDPOIT!
+### It will prompt you to input your BLOCKCHAIN_RPC_ENDPOINT!
 
 ### Ok, let's go, setup storage kv automatic with one command
 ```
