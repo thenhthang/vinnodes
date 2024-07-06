@@ -45,7 +45,7 @@ MONIKER=<YOUR_NODE_NAME_GOES_HERE>
 ```
 Save and import variables into system
 ```
-echo 'export MONIKER=$MONIKER' >> ~/.bash_profile
+echo 'export MONIKER="'$MONIKER'"' >> ~/.bash_profile
 echo 'export CHAIN_ID="zgtendermint_16600-2"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 echo 'export RPC_PORT="26657"' >> ~/.bash_profile
