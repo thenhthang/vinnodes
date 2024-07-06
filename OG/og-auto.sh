@@ -12,11 +12,8 @@ echo -e "\e[0m"
 sleep 2
 
 # set vars
-if [ ! $MONIKER ]; then
-	read -p "Enter node name: " MONIKER
-	echo 'export MONIKER='$MONIKER >> $HOME/.bash_profile
-fi
-source $HOME/.bash_profile
+read -p "Enter node name: " MONIKER
+echo 'export MONIKER="'$MONIKER'"' >> $HOME/.bash_profile
 echo 'export CHAIN_ID="zgtendermint_16600-2"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 echo 'export RPC_PORT="26657"' >> ~/.bash_profile
