@@ -127,7 +127,7 @@ sudo journalctl -u 0gchaind -f -o cat
 # Step 2: Create validator
 ## Create wallet
 ```
-0gchaind keys add $WALLET_NAME
+0gchaind keys add $WALLET_NAME --eth
 ```
 #### DO NOT FORGET TO SAVE THE SEED PHRASE
 #### You can add --recover flag to restore existing key instead of creating
