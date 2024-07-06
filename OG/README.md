@@ -46,7 +46,7 @@ MONIKER=<YOUR_NODE_NAME_GOES_HERE>
 Save and import variables into system
 ```
 echo 'export MONIKER=$MONIKER' >> ~/.bash_profile
-echo 'export CHAIN_ID="zgtendermint_16600-1"' >> ~/.bash_profile
+echo 'export CHAIN_ID="zgtendermint_16600-2"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 echo 'export RPC_PORT="26657"' >> ~/.bash_profile
 source $HOME/.bash_profile
@@ -155,7 +155,7 @@ echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex |
   --from=$WALLET_NAME \
   --identity="" \
   --website="" \
-  --details="0G to the moon!" \
+  --details="NodesRunner number 1!" \
   --gas=auto \
   --gas-adjustment=1.4 \
   -y
