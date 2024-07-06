@@ -13,9 +13,9 @@ sleep 2
 
 # set vars
 read -p "Enter your BLOCKCHAIN_RPC_ENDPOINT: " BLOCKCHAIN_RPC_ENDPOINT
-echo 'export BLOCKCHAIN_RPC_ENDPOINT=$BLOCKCHAIN_RPC_ENDPOINT' >> $HOME/.bash_profile
+echo 'export BLOCKCHAIN_RPC_ENDPOINT="'$BLOCKCHAIN_RPC_ENDPOINT'"' >> $HOME/.bash_profile
 MYIP=$(wget -qO- eth0.me)
-echo 'export MYIP=$MYIP' >> $HOME/.bash_profile
+echo 'export MYIP="'$MYIP'"' >> $HOME/.bash_profile
 source ~/.bash_profile
 
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
