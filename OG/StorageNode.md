@@ -36,6 +36,8 @@ Minimum
 ### It will prompt you to input your EVM_PRIVATE_KEY and your BLOCKCHAIN_RPC_ENDPOIT!
 #### Get evm private key
 Open metamask wallet > Account details > Show private key
+OR
+0gchaind keys unsafe-export-eth-key $WALLET_NAME
 #### List rpc endpoint
 You can use your own rpc-end-point or use any rpc below:
 - https://rpc-testnet.0g.ai
