@@ -29,7 +29,7 @@ Minimum
 |---------------|-------------|-------------|-------------|
 | **zgtendermint_16600-1** | v0.3.0 | No |  |
 | **zgtendermint_16600-2** | v0.3.2 | No |  |
-| **zgtendermint_16600-2** | v0.3.3 | Yes | 07/02/2024 |
+| **zgtendermint_16600-2** | v0.3.3 | Yes | 07/14/2024 |
 
 # Install
 ### You can setup your OG Storage Node in few minutes by using automated script below.
