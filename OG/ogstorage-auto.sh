@@ -61,7 +61,6 @@ cargo build --release
 # update config
 sed -i '
 s|network_enr_address = ""|network_enr_address = "'$MYIP'"|
-s|# network_libp2p_port = 1234|network_libp2p_port = 1234|
 s|# rpc_listen_address = "0.0.0.0:5678"|rpc_listen_address = "0.0.0.0:5678"|
 s|network_boot_nodes = [".*"]|network_boot_nodes = ["/ip4/54.219.26.22/udp/1234/p2p/16Uiu2HAmTVDGNhkHD98zDnJxQWu3i1FL1aFYeh9wiQTNu4pDCgps","/ip4/52.52.127.117/udp/1234/p2p/16Uiu2HAkzRjxK2gorngB1Xq84qDrT4hSVznYDHj6BkbaE4SGx9oS","/ip4/18.167.69.68/udp/1234/p2p/16Uiu2HAm2k6ua2mGgvZ8rTMV8GhpW71aVzkQWy7D37TTDuLCpgmX"]|
 s|^log_contract_address = ".*"|log_contract_address = "0x8873cc79c5b3b5666535C825205C9a128B1D75F1"|
@@ -83,7 +82,7 @@ After=network.target
 [Service]
 User=root
 WorkingDirectory=$HOME/0g-storage-node/run
-ExecStart=$HOME/0g-storage-node/target/release/zgs_node --config $HOME/0g-storage-node/run/config.toml
+ExecStart=$HOME/0g-storage-node/target/release/zgs_node --config $HOME/0g-storage-node/run/config.toml --miner-key $PRIVATE_KEY --blockchain-rpc-endpoint $BLOCKCHAIN_RPC_ENDPOINT
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
