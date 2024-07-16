@@ -43,7 +43,9 @@ After the installation process is complete, run the following command, to restar
 git clone https://github.com/0glabs/0g-da-node.git
 cd $HOME/0g-da-node
 cargo build --release
-./dev_support/download_params.sh
+cd $HOME/0g-da-node/dev_support
+./download_params.sh
+sudo cp -R /root/0g-da-node/dev_support/params /root/0g-da-node/target/release
 sudo mv "$HOME/0g-da-node/target/release/server" /usr/local/bin
 ```
 
