@@ -20,7 +20,8 @@ This guide will help you in the 0G DA node installation process.
 ### 1. Install Dependencies
 ```bash
 sudo apt-get update
-sudo apt-get install git cargo clang cmake build-essential pkg-config openssl libssl-dev protobuf-compiler
+sudo apt-get install git cargo clang cmake build-essential pkg-config openssl libssl-dev protobuf-compiler llvm llvm-dev
+sudo apt-get install 
 ```
 
 ### 2. Install Rustup
