@@ -21,7 +21,9 @@ This guide will help you in the 0G DA node installation process.
 ```bash
 sudo apt-get update
 sudo apt-get install git cargo clang cmake build-essential pkg-config openssl libssl-dev protobuf-compiler llvm llvm-dev
-sudo apt-get install 
+wget https://github.com/protocolbuffers/protobuf/releases/download/v21.0/protoc-21.0-linux-x86_64.zip
+unzip protoc-21.0-linux-x86_64.zip -d protoc21
+sudo cp protoc21/bin/protoc /usr/local/bin/
 ```
 
 ### 2. Install Rustup
