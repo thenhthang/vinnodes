@@ -46,7 +46,6 @@ cargo build --release
 cd $HOME/0g-da-node/dev_support
 ./download_params.sh
 sudo cp -R /root/0g-da-node/dev_support/params /root/0g-da-node/target/release
-sudo mv "$HOME/0g-da-node/target/release/server" /usr/local/bin
 ```
 
 ### 4. Create DB Directory
@@ -134,10 +133,11 @@ Description=0G DA Node
 After=network.target
 
 [Service]
-User=$USER
-Type=simple
-ExecStart=/usr/local/bin/server --config $HOME/0g-da-node/config.toml
+User=root
+WorkingDirectory=/root/0g-da-node/target/release
+ExecStart=/root/0g-da-node/target/release/server --config /root/0g-da-node/config.toml
 Restart=on-failure
+RestartSec=10
 LimitNOFILE=65535
 
 [Install]
