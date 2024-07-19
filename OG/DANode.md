@@ -17,6 +17,24 @@ This guide will help you in the 0G DA node installation process.
 -----------------------------------------------------------------
 
 ## DA Node Installation
+## YOUR ETH WALLET NEED STAKE MIN 10 OG TO ANY VALIDATOR TO RUN DA NODE
+## Create wallet
+```
+0gchaind keys add DANODE --eth
+```
+### Export private key
+```
+0gchaind keys export DANODE --unsafe --unarmored-hex
+```
+### Get ETH Address
+```
+echo "0x$(0gchaind debug addr $(0gchaind keys show DANODE -a) | grep hex | awk '{print $3}')"
+```
+### Faucet 11 og: https://faucet.0g.ai/
+### Delegate 10 og to a validator
+```
+0gchaind tx staking delegate 0gvaloper1d5rq8htu5c87djw2g5zkpwa4gpm2e62gek0ptf 10000000ua0gi --from DANODE --gas=auto --gas-adjustment=1.4 -y
+```
 ### 1. Install Dependencies
 ```bash
 sudo apt-get update
