@@ -7,7 +7,7 @@
   <img height="100" height="auto" src="https://github.com/thenhthang/vinnodes/blob/main/content/oglogo.png?raw=true">
 </p>
 
-# 0G-DA-Client
+# Da Client
 
 ### Build
 ```bash
