@@ -227,6 +227,20 @@ sudo systemctl restart 0gchaind && sudo journalctl -u 0gchaind -f -o cat
 ```bash
 sudo systemctl stop 0gchaind
 ```
+# Set pruning
+```
+sed -i.bak -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.0gchain/config/app.toml
+sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.0gchain/config/app.toml
+sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.0gchain/config/app.toml
+```
+# Set indexer
+```
+sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.0gchain/config/config.toml
+```
+# Set gas price
+```
+sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ua0gi\"/" $HOME/.0gchain/config/app.toml
+```
 ### Delete the node from the server
 ```bash
 # !!! IF YOU HAVE CREATED A VALIDATOR, MAKE SURE TO BACKUP `priv_validator_key.json` file located in $HOME/.0gchain/config/ 
