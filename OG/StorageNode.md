@@ -82,6 +82,13 @@ If you see the same, the installation was successful
 ```
 $HOME/0g-storage-node/target/release/zgs_node --version
 ```
+### Upgrade
+```
+cd 0g-storage-node
+git checkout tags/v0.3.4
+git submodule update --init
+cargo build --release
+```
 
 ![alt text](image-1.png)
 
