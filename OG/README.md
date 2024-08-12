@@ -218,6 +218,9 @@ htop
 ```bash
 sudo journalctl -u 0gchaind -f -o cat
 ```
+```
+tail -f -n 100 $HOME/.0gchain/log/chain.log
+```
 ### Check the node is running
 ```
 sudo systemctl status 0gchaind.service
