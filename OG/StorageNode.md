@@ -84,8 +84,10 @@ $HOME/0g-storage-node/target/release/zgs_node --version
 ```
 ### Upgrade
 ```
-cd 0g-storage-node
-git checkout tags/v0.3.4
+cd $HOME/0g-storage-node
+git stash
+git fetch --all --tags
+git checkout tags/v0.4.4
 git submodule update --init
 cargo build --release
 ```
