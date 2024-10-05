@@ -16,6 +16,7 @@ cargo install --locked --path linera-service
 ```
 cd target/release
 ```
+```
 sudo tee ./configuration.toml > /dev/null <<EOF
 server_config_path = "server.json"
 host = "<your-host>" # e.g. my-subdomain.my-domain.net
@@ -35,6 +36,7 @@ port = 19100
 metrics_host = "shard"
 metrics_port = 21100
 EOF
+```
 ```
 wget "https://storage.googleapis.com/linera-io-dev-public/testnet-boole/genesis.json"
 ```
