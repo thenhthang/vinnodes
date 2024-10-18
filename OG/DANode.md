@@ -179,6 +179,30 @@ sudo systemctl enable zgda && \
 sudo systemctl start zgda && \
 sudo systemctl status zgda
 ```
+### Upgrade
+```
+sudo systemctl stop zgda && cp $HOME/0g-da-node/config.toml $HOME/da_config.toml.backup
+```
+```
+cd $HOME/0g-da-node
+git stash
+git fetch --all --tags
+git checkout 8514e328045de7d27f5360664cbf84c7ae11762e
+git submodule update --init
+cargo build --release
+```
+```
+mv $HOME/da_config.toml.backup $HOME/0g-da-node/config.toml
+```
+```
+sed -i 's|^da_entrance_address = .*|da_entrance_address = "0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9"|g' ~/0g-da-node/config.toml
+sed -i 's|^start_block_number = .*|start_block_number = "940000"|g' ~/0g-da-node/config.toml
+sed -i 's|^enable_das = .*|enable_das = "true"|g' ~/0g-da-node/config.toml
+rm -r $HOME/0g-da-node/target/release/db
+```
+```
+sudo systemctl restart zgda && journalctl -u zgda -f -o cat
+```
 
 -----------------------------------------------------------------
 
