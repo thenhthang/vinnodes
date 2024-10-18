@@ -58,3 +58,15 @@ if custom port is needed (besides port 22) use -P PortNumber
 . (dot) - it means current working directory, So download/copy from server and paste here only.
 Note: Sometimes the custom port will not work due to the port not being allowed in the firewall, so make sure that custom port is allowed in the firewall for incoming and outgoing connection
 ```
+## user syslog chiếm nhiều cpu và dung lượng log quá lớn
+Giảm kích thước tệp nhật ký hiện tại
+```
+sudo truncate -s 0 /var/log/syslog
+```
+Khởi động lại dịch vu
+```
+sudo systemctl restart rsyslog
+# Hoặc cho systemd-journald
+sudo systemctl restart systemd-journald
+```
+chỉnh sửa tệp cấu hình /etc/logrotate.conf
