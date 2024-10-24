@@ -185,6 +185,10 @@ echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex |
 ```bash
 0gchaind tx slashing unjail --from $WALLET_NAME --gas=500000 --gas-prices=99999ua0gi -y
 ```
+### withdraw-rewards
+```bash
+```
+0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_16600-2 --gas-adjustment 1.5 --gas auto --gas-prices 0.00252ua0gi -y
 ```
 0gchaind tx slashing unjail --from wallet --chain-id zgtendermint_16600-2 --gas-adjustment 1.5 --gas auto --gas-prices 0.00252ua0gi -y
 ```
