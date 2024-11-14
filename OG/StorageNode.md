@@ -90,9 +90,10 @@ rm -rf $HOME/0g-storage-node/run/db
 ```
 cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.bak
 ```
-### Upgrade
+### Upgrade to v0.7.4
 ```
 sudo systemctl stop zgs
+cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.bak
 ```
 ```
 cd $HOME/0g-storage-node
@@ -103,6 +104,8 @@ git submodule update --init
 cargo build --release
 ```
 ```
+rm -rf $HOME/0g-storage-node/run/db
+cp config.toml.bak $HOME/0g-storage-node/run/config.toml
 sudo systemctl restart zgs && sudo systemctl status zgs
 ```
 
