@@ -82,7 +82,18 @@ If you see the same, the installation was successful
 ```
 $HOME/0g-storage-node/target/release/zgs_node --version
 ```
+### deleta all data
+```
+rm -rf $HOME/0g-storage-node/run/db
+```
+### backup config
+```
+cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.bak
+```
 ### Upgrade
+```
+sudo systemctl stop zgs
+```
 ```
 cd $HOME/0g-storage-node
 git stash
@@ -90,6 +101,9 @@ git fetch --all --tags
 git checkout tags/v0.4.4
 git submodule update --init
 cargo build --release
+```
+```
+sudo systemctl restart zgs && sudo systemctl status zgs
 ```
 
 ![alt text](image-1.png)
