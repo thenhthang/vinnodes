@@ -105,7 +105,7 @@ cargo build --release
 ```
 ```
 rm -rf $HOME/0g-storage-node/run/db
-cp config.toml.bak $HOME/0g-storage-node/run/config.toml
+cp $HOME/config.toml.bak $HOME/0g-storage-node/run/config.toml
 sudo systemctl restart zgs && sudo systemctl status zgs
 ```
 
