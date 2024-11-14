@@ -98,7 +98,7 @@ sudo systemctl stop zgs
 cd $HOME/0g-storage-node
 git stash
 git fetch --all --tags
-git checkout tags/v0.4.4
+git checkout tags/v0.7.4
 git submodule update --init
 cargo build --release
 ```
