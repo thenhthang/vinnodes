@@ -90,7 +90,7 @@ rm -rf $HOME/0g-storage-node/run/db
 ```
 cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.bak
 ```
-### Upgrade to v0.7.4
+### Upgrade to v0.8.0
 ```
 sudo systemctl stop zgs
 cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.bak
@@ -99,7 +99,7 @@ cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.bak
 cd $HOME/0g-storage-node
 git stash
 git fetch --all --tags
-git checkout tags/v0.7.4
+git checkout tags/v0.8.0
 git submodule update --init
 cargo build --release
 ```
