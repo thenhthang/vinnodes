@@ -108,7 +108,10 @@ rm -rf $HOME/0g-storage-node/run/db
 cp $HOME/config.toml.bak $HOME/0g-storage-node/run/config.toml
 sudo systemctl restart zgs && sudo systemctl status zgs
 ```
-
+### check sync status
+```
+source <(curl -s https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/OG/storagenodetest.sh)
+```
 ![alt text](image-1.png)
 
 Question: <a href="https://t.me/nodesrunnerguruchat" target="_blank">NodesRunner Chat</a>
