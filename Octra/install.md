@@ -5,10 +5,6 @@ chmod +x env.sh
 ./env.sh
 ````
 ```
-wget https://raw.githubusercontent.com/0xChicharito/Octra/refs/heads/main/config.ml
-```
-
-```
 eval $(opam env)
 ```
 
@@ -29,7 +25,7 @@ eval $(opam env)
 ```
 
 ```
-opam install ocamlfind
+opam install ocamlfind,cohttp-lwt-unix,lwt_ppx
 ```
 
 ```
