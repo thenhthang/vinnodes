@@ -1,9 +1,13 @@
-#### setup enviroment
+#### install lib
 ```
 wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Octra/env.sh
 chmod +x env.sh
 ./env.sh
 ````
+### config
+```
+wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/Octra/config.ml
+```
 ```
 eval $(opam env)
 ```
