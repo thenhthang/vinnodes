@@ -50,11 +50,12 @@ opam switch 5.2.1
 eval $(opam env)
 
 printf "${YELLOW}Installing OCaml dependencies...${RESET}\n"
-opam install -y dune yojson lwt cohttp-lwt-unix ppx_deriving ocamlfind sqlite3 digestif base-threads
+opam install -y dune lwt cohttp-lwt-unix ppx_deriving ocamlfind sqlite3 digestif base-threads
 opam install -y mirage mirage-crypto mirage-runtime mirage-clock-unix
 opam install -y irmin irmin-mirage irmin-http irmin-unix
 opam install -y conduit-lwt tls logs fmt
 opam install -y alcotest ounit bisect_ppx merlin ocp-indent utop
+opam install ocamlfind cohttp-lwt-unix lwt_ppx yojson
 
 printf "${YELLOW}Verifying installation...${RESET}\n"
 ocaml --version
