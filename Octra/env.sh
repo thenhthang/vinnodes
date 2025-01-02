@@ -29,10 +29,10 @@ if ! command -v opam &> /dev/null; then
   printf "${YELLOW}OPAM not found. Installing...${RESET}\n"
   case "$OS" in
     Linux)
-      sudo apt-get install -y opam
+      sudo apt-get install -y opam ocaml-findlib
       ;;
     Darwin)
-      brew install opam
+      brew install opam ocaml-findlib
       ;;
     *)
       printf "${RED}Unsupported OS: $OS${RESET}\n"
