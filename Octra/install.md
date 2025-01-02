@@ -8,20 +8,9 @@ chmod +x env.sh
 ```
 wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/Octra/config.ml
 ```
-
-```
-opam install ocamlfind cohttp-lwt-unix lwt_ppx ocaml-findlib
-```
-```
-opam reinstall yojson
-```
-```
-eval $(opam env)
-```
 ```
 ocamlfind ocamlopt -o config -thread -linkpkg -package yojson,cohttp-lwt-unix,unix,str,lwt_ppx config.ml
 ```
-
 ```
 ./config
 ```
