@@ -6,7 +6,7 @@ chmod +x env.sh
 ````
 ### config
 ```
-wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/Octra/config.ml
+wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Octra/config.ml
 ```
 ```
 ocamlfind ocamlopt -o config -thread -linkpkg -package yojson,cohttp-lwt-unix,unix,str,lwt_ppx config.ml
