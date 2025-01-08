@@ -109,6 +109,9 @@ sudo systemctl restart zgs && sudo systemctl status zgs
 ```
 ### check sync status
 ```
+tail -f ~/0g-storage-node/run/log/zgs.log.$(date +%Y-%m-%d)
+```
+```
 source <(curl -s https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/OG/storagenodetest.sh)
 ```
 ![alt text](image-1.png)
