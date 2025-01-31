@@ -1,4 +1,5 @@
-# Download binary
+# Start
+## Download binary
 ```
 mkdir pipe
 cd pipe
@@ -6,7 +7,7 @@ wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Pipe/
 chmod +x pop
 mkdir download_cache
 ```
-# Signup
+## Signup
 ```
 ./pop --signup-by-referral-route 3bc39301286371bc
 ```
@@ -14,8 +15,8 @@ please change $YOUR_SOLANA_ADDRESS
 ```
 SOLANA_ADDRESS="YOUR_SOLANA_ADDRESS"
 ```
-# Create systemd service file
-## please change YOUR_SOLANA_ADDRESS
+## Create systemd service file
+### please change YOUR_SOLANA_ADDRESS
 ```
 sudo tee /etc/systemd/system/popd.service > /dev/null <<EOF
 [Unit]
@@ -41,13 +42,13 @@ WorkingDirectory=$HOME/pipe
 WantedBy=multi-user.target
 EOF
 ```
-# Start service
+## Start service
 ``
 sudo systemctl daemon-reload && sudo systemctl enable popd.service && sudo systemctl start popd.service
 ``
 # END
 
-# Restart
+## Restart
 ```
 sudo systemctl restart popd.service
 ```
