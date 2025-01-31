@@ -17,6 +17,7 @@ mkdir download_cache
 ```
 
 # Create systemd service file
+## please change YOUR_SOLANA_ADDRESS
 ```
 sudo tee /etc/systemd/system/popd.service > /dev/null <<EOF
 [Unit]
@@ -48,8 +49,26 @@ sudo systemctl daemon-reload
 sudo systemctl enable popd.service
 sudo systemctl start popd.service
 ``
-# check status
+# DONE
+# 
+# Restart
+```
+sudo systemctl restart popd.service
+```
+# check services status
 ```
 sudo systemctl status popd.service
 ```
+# MONITOR
+## View metrics
+./pop --status
+
+## Check points
+./pop --points-route
+
+## Generate referral
+./pop --gen-referral-route
+
+## Use referral
+./pop --signup-by-referral-route <CODE>
 
