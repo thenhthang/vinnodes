@@ -10,10 +10,9 @@ mkdir download_cache
 ```
 ./pop --signup-by-referral-route 3bc39301286371bc
 ```
-# Setting, 
-```
-./pop
-```
+Press Enter to continue
+<img width="736" alt="image" src="https://github.com/user-attachments/assets/8fb14d4c-b310-4def-afb7-7a585b4f873a" />
+
 # Create systemd service file
 ## please change YOUR_SOLANA_ADDRESS
 ```
