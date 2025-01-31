@@ -5,8 +5,8 @@ cd pipe
 wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Pipe/binary/pop
 chmod +x pop
 mkdir download_cache
+./pop --signup-by-referral-route 3bc39301286371bc
 ```
-
 
 # Create systemd service file
 ```
@@ -19,7 +19,7 @@ Wants=network-online.target
 [Service]
 User=root
 Type=simple
-ExecStart=./pop --signup-by-referral-route 3bc39301286371bc
+ExecStart=$HOME/pop
 
 Restart=always
 RestartSec=5
@@ -34,3 +34,11 @@ WorkingDirectory=$HOME/pipe
 WantedBy=multi-user.target
 EOF
 ```
+# start
+``
+sudo systemctl daemon-reload
+sudo systemctl enable popd.service
+sudo systemctl start popd.service
+``
+# log
+
