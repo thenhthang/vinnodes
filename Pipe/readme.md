@@ -5,7 +5,15 @@ cd pipe
 wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Pipe/binary/pop
 chmod +x pop
 mkdir download_cache
+
+```
+# Signup
+```
 ./pop --signup-by-referral-route 3bc39301286371bc
+```
+# Setting, enter to 
+```
+./pop
 ```
 
 # Create systemd service file
@@ -19,7 +27,7 @@ Wants=network-online.target
 [Service]
 User=root
 Type=simple
-ExecStart=$HOME/pop
+ExecStart=$HOME/pipe/pop --cache-dir $HOME/pipe/download_cache --pubKey YOUR_SOLANA_ADDRESS
 
 Restart=always
 RestartSec=5
@@ -40,5 +48,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable popd.service
 sudo systemctl start popd.service
 ``
-# log
+# check status
+```
+sudo systemctl status popd.service
+```
 
