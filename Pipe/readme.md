@@ -10,9 +10,10 @@ mkdir download_cache
 ```
 ./pop --signup-by-referral-route 3bc39301286371bc
 ```
-Press Enter to continue
-<img width="736" alt="image" src="https://github.com/user-attachments/assets/8fb14d4c-b310-4def-afb7-7a585b4f873a" />
-
+please change $YOUR_SOLANA_ADDRESS
+```
+SOLANA_ADDRESS="YOUR_SOLANA_ADDRESS"
+```
 # Create systemd service file
 ## please change YOUR_SOLANA_ADDRESS
 ```
@@ -25,7 +26,7 @@ Wants=network-online.target
 [Service]
 User=root
 Type=simple
-ExecStart=$HOME/pipe/pop --cache-dir $HOME/pipe/download_cache --pubKey YOUR_SOLANA_ADDRESS
+ExecStart=$HOME/pipe/pop --cache-dir $HOME/pipe/download_cache --pubKey $SOLANA_ADDRESS
 
 Restart=always
 RestartSec=5
@@ -46,26 +47,37 @@ sudo systemctl daemon-reload
 sudo systemctl enable popd.service
 sudo systemctl start popd.service
 ``
-# DONE
+# END
 
 # Restart
 ```
 sudo systemctl restart popd.service
 ```
-# check services status
+# MONITOR
+## check service status
 ```
 sudo systemctl status popd.service
 ```
-# MONITOR
+if you see the same, it's ok.
+<img width="1044" alt="image" src="https://github.com/user-attachments/assets/d9e5f48b-8d64-4ccd-8f3c-0036142324f4" />
+
 ## View metrics
+```
 ./pop --status
+```
 
 ## Check points
+```
 ./pop --points-route
+```
 
 ## Generate referral
+```
 ./pop --gen-referral-route
+```
 
 ## Use referral
+```
 ./pop --signup-by-referral-route <CODE>
+```
 
