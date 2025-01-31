@@ -43,9 +43,10 @@ WantedBy=multi-user.target
 EOF
 ```
 ## Start service
-``
+
+```
 sudo systemctl daemon-reload && sudo systemctl enable popd.service && sudo systemctl start popd.service
-``
+```
 # END
 
 ## Restart
