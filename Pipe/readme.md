@@ -5,17 +5,15 @@ cd pipe
 wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Pipe/binary/pop
 chmod +x pop
 mkdir download_cache
-
 ```
 # Signup
 ```
 ./pop --signup-by-referral-route 3bc39301286371bc
 ```
-# Setting, enter to 
+# Setting, 
 ```
 ./pop
 ```
-
 # Create systemd service file
 ## please change YOUR_SOLANA_ADDRESS
 ```
@@ -50,7 +48,7 @@ sudo systemctl enable popd.service
 sudo systemctl start popd.service
 ``
 # DONE
-# 
+
 # Restart
 ```
 sudo systemctl restart popd.service
