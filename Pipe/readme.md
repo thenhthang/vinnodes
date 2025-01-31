@@ -1,11 +1,15 @@
 # Download binary
+```
 mkdir pipe
 cd pipe
-wget https://
+wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Pipe/binary/pop
 chmod +x pop
 mkdir download_cache
+```
+
 
 # Create systemd service file
+```
 sudo tee /etc/systemd/system/popd.service > /dev/null <<EOF
 [Unit]
 Description=Pipe POP Node Service
