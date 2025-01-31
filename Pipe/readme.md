@@ -41,11 +41,9 @@ WorkingDirectory=$HOME/pipe
 WantedBy=multi-user.target
 EOF
 ```
-# start
+# Start service
 ``
-sudo systemctl daemon-reload
-sudo systemctl enable popd.service
-sudo systemctl start popd.service
+sudo systemctl daemon-reload && sudo systemctl enable popd.service && sudo systemctl start popd.service
 ``
 # END
 
