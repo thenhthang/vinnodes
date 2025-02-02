@@ -9,7 +9,7 @@ mkdir download_cache
 ```
 ## Signup
 ```
-./pop --signup-by-referral-route 3bc39301286371bc
+./pop --signup-by-referral-route 84a8bbbe91f5acdf
 ```
 please change $YOUR_SOLANA_ADDRESS
 ```
