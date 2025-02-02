@@ -53,6 +53,10 @@ sudo systemctl daemon-reload && sudo systemctl enable popd.service && sudo syste
 ```
 sudo systemctl restart popd.service
 ```
+## Stop
+```
+sudo systemctl stop popd.service
+```
 # MONITOR
 ## check service status
 ```
