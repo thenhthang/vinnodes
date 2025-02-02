@@ -57,6 +57,13 @@ sudo systemctl restart popd.service
 ```
 sudo systemctl stop popd.service
 ```
+# Upgrade
+```
+sudo systemctl stop popd.service
+cd $HOME/pipi
+wget https://
+sudo systemctl restart popd.service
+```
 # MONITOR
 ## check service status
 ```
