@@ -25,7 +25,7 @@ Wants=network-online.target
 [Service]
 User=root
 Type=simple
-ExecStart=$HOME/pop --cache-dir $HOME/download_cache --pubKey $SOLANA_ADDRESS
+ExecStart=$HOME/pop --pubKey $SOLANA_ADDRESS
 
 Restart=always
 RestartSec=5
