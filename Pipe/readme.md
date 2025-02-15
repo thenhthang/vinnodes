@@ -1,13 +1,15 @@
 # Start
 ## Download binary
 ```
+mkdir pipe
+cd pipe
 curl -L -o pop "https://dl.pipecdn.app/v0.2.5/pop"
 chmod +x pop
 mkdir download_cache
 ```
 ## Signup
 ```
-./pop --signup-by-referral-route 84a8bbbe91f5acdf
+./pop --signup-by-referral-route 78e10002e8a0bafa
 ```
 please change $YOUR_SOLANA_ADDRESS
 ```
@@ -25,7 +27,7 @@ Wants=network-online.target
 [Service]
 User=root
 Type=simple
-ExecStart=$HOME/pop --pubKey $SOLANA_ADDRESS
+ExecStart=$HOME/pipe/pop --pubKey $SOLANA_ADDRESS --cache-dir $HOME/pipe/download_cache
 
 Restart=always
 RestartSec=5
