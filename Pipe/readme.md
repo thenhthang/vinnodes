@@ -1,9 +1,7 @@
 # Start
 ## Download binary
 ```
-mkdir pipe
-cd pipe
-wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Pipe/binary/pop
+curl -L -o pop "https://dl.pipecdn.app/v0.2.5/pop"
 chmod +x pop
 mkdir download_cache
 ```
@@ -27,7 +25,7 @@ Wants=network-online.target
 [Service]
 User=root
 Type=simple
-ExecStart=$HOME/pipe/pop --cache-dir $HOME/pipe/download_cache --pubKey $SOLANA_ADDRESS
+ExecStart=$HOME/pop --cache-dir $HOME/download_cache --pubKey $SOLANA_ADDRESS
 
 Restart=always
 RestartSec=5
@@ -60,7 +58,7 @@ sudo systemctl stop popd.service
 # Upgrade
 ```
 sudo systemctl stop popd.service
-cd $HOME/pipi
+cd $HOME
 wget https://
 sudo systemctl restart popd.service
 ```
