@@ -36,7 +36,10 @@ You can setup your OG validator in few minutes by using automated script below. 
 ```
 wget -O og-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/OG/og-auto.sh && chmod +x og-auto.sh && ./og-auto.sh
 ```
-
+### Galileo Testnet 
+```
+source <(curl -s https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/OG/0gchainv3.sh)
+```
 ### Option 2 (manual)
 ## Setting up vars
 Here you have to put name of your node name (validator) that will be visible in explorer
