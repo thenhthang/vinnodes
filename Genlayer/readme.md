@@ -24,17 +24,10 @@ Recommended
 >- Operating System - 64-bit Linux (Ubuntu, Debian, CentOS, etc.)
 
 | Network | Version | Current |
-|---------------|-------------|
+|---------------|-------------|-------------|
 | **Goldberg Testnet** | v0.3.5 | Yes |
 
 ## Step 1: Set up your Avail Node
-### Option 1 (automatic)
-You can setup your avail validator in few minutes by using automated script below. It will prompt you to input your validator node name!
-```
-wget -O avail-auto.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-auto.sh && chmod +x avail-auto.sh && ./avail-auto.sh
-```
-
-### Option 2 (manual)
 ## Setting up vars
 Here you have to put name of your node name (validator) that will be visible in explorer
 ```
