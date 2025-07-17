@@ -25,7 +25,7 @@ Recommended
 
 | Network | Version | Current |
 |---------------|-------------|-------------|
-| **Goldberg Testnet** | v0.3.5 | Yes |
+| **Asimov** | v0.3.5 | Yes |
 
 ## Step 1: Set up your Avail Node
 ## Setting up vars
