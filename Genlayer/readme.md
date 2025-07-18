@@ -22,24 +22,60 @@ Recommended
 >- 8 cores/16 threads
 >- 128+ GB Storage (SSD)
 >- Operating System - 64-bit Linux (Ubuntu, Debian, CentOS, etc.)
+>- GPU is Not Required
+
+```diff
+- These requirements are a starting point. As GenLayer evolves and usage patterns change (e.g., more complex AI-driven Intelligent Contracts), the recommended hardware may change.
+```
 
 | Network | Version | Current |
 |---------------|-------------|-------------|
-| **Asimov** | v0.3.5 | Yes |
+| **Asimov** | v0.3.6 | Yes |
 
-## Step 1: Set up your Avail Node
+## Step 1: Set up your Genlayer Node
+Check for the latest version
+```
+curl -s "https://storage.googleapis.com/storage/v1/b/gh-af/o?prefix=genlayer-node/bin/amd64" \
+| grep -o '"name": *"[^"]*"' \
+| sed -n 's/.*\/\(v[^/]*\)\/.*/\1/p' \
+| sort -ru \
+| head -n1
+```
+Download the latest version
+```
+export version=v0.3.6 # set your desired version here
+wget https://storage.googleapis.com/gh-af/genlayer-node/bin/amd64/${version}/genlayer-node-linux-amd64-${version}.tar.gz -O $HOME/genlayer-node-${LATEST_VERSION}.tar.gz
+cd $HOME
+tar -xzvf genlayer-node-linux-amd64-${version}.tar.gz
+
+```
+Precompilation (optional but recommended)
+```
+$HOME/genlayer-node-linux-amd64/third_party/genvm/bin/genvm precompile
+```
+Configuration node
 ## Setting up vars
-Here you have to put name of your node name (validator) that will be visible in explorer
+
 ```
-NODENAME=<YOUR_NODE_NAME_GOES_HERE>
-```
-Save and import variables into system
-```
-AVAIL_PORT=30333
-echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
-echo "export AVAIL_PORT=${AVAIL_PORT}" >> $HOME/.bash_profile
+cd $HOME
+ZKSYNC_URL="https://genlayer-testnet.rpc.caldera.xyz/http"
+ZKSYNC_WEBSOCKET_URL="wss://genlayer-testnet.rpc.caldera.xyz/ws"
+HEURISTKEY="YOUR_KEY"
+echo "export ZKSYNC_URL=$ZKSYNC_URL" >> $HOME/.bash_profile
+echo "export ZKSYNC_WEBSOCKET_URL=$ZKSYNC_WEBSOCKET_URL" >> $HOME/.bash_profile
+echo "export HEURISTKEY=$HEURISTKEY" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
+Config node
+```
+sed -i "s|^\( *zksyncurl: *\).*|\1\"$ZKSYNC_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
+sed -i "s|^\( *zksyncwebsocketurl: *\).*|\1\"$ZKSYNC_WEBSOCKET_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
+```
+Config LLM provider : Disable (enable: false) every provider but HEURIST.
+```
+nano $HOME/genlayer-node-linux-amd64/third_party/genvm/config/genvm-module-llm.yaml 
+```
+
 ## Update packages
 ```
 sudo apt update && sudo apt upgrade -y
