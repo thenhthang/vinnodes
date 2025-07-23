@@ -8,7 +8,6 @@
 </p>
 
 # Genlayer validator
-
 Official documentation:
 >- https://docs.genlayer.com/validators/setup-guide
 >- https://github.com/genlayerlabs
@@ -16,13 +15,16 @@ Official documentation:
 Explorer:
 >- https://genlayer-testnet.explorer.caldera.xyz
 
+### Currently the GenLayer Testnet is permissioned. You can apply to be selected by filling out the following form:
+https://docs.google.com/forms/d/e/1FAIpQLSc7YujY6S6knB9XC8kL-2wsgNHrweqULstgc-OOMERlRsfg0A/viewform
+
 ## Hardware Requirements 
 Recommended
 >- 16GB RAM
 >- 8 cores/16 threads
 >- 128+ GB Storage (SSD)
 >- Operating System - 64-bit Linux (Ubuntu, Debian, CentOS, etc.)
->- GPU is Not Required
+>- GPU(Optional)
 
 ```diff
 - These requirements are a starting point. As GenLayer evolves and usage patterns change (e.g., more complex AI-driven Intelligent Contracts), the recommended hardware may change.
@@ -32,7 +34,7 @@ Recommended
 |---------------|-------------|-------------|
 | **Asimov** | v0.3.6 | Yes |
 
-## Step 1: Set up your Genlayer Node
+## Set up your Genlayer Node
 Check for the latest version
 ```
 curl -s "https://storage.googleapis.com/storage/v1/b/gh-af/o?prefix=genlayer-node/bin/amd64" \
@@ -43,19 +45,20 @@ curl -s "https://storage.googleapis.com/storage/v1/b/gh-af/o?prefix=genlayer-nod
 Download the latest version
 ```
 LATEST_VERSION=v0.3.6 # set your desired version here
-export version=$LATEST_VERSION 
 wget https://storage.googleapis.com/gh-af/genlayer-node/bin/amd64/${version}/genlayer-node-linux-amd64-${version}.tar.gz -O $HOME/genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
 cd $HOME
-tar -xzvf genlayer-node-linux-amd64-${version}.tar.gz
+tar -xzvf genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
 
 ```
 Precompilation (optional but recommended)
 ```
 $HOME/genlayer-node-linux-amd64/third_party/genvm/bin/genvm precompile
 ```
-Configuration node
 ## Setting up vars
 
+- You need to set up an LLM for your node to use to provide answers to natural language prompts. You can use any LLM you wish, however the quality of its answers will affect the performance of your node.
+>- Get free Heurist API Key by using the referral code: "genlayer": https://dev-api-form.heurist.ai/
+- 
 ```
 cd $HOME
 ZKSYNC_URL="https://genlayer-testnet.rpc.caldera.xyz/http"
@@ -73,8 +76,7 @@ sed -i "s|^\( *zksyncwebsocketurl: *\).*|\1\"$ZKSYNC_WEBSOCKET_URL\"|" $HOME/gen
 ```
 Config LLM provider :
 ```diff
-At this stage, select one LLM and set all other to disabled.
-Disable (enable: false) every provider but HEURIST.
+- At this stage, select one LLM and set all other to disabled. Disable (enable: false) every provider but HEURIST.
 ```
 ```
 nano $HOME/genlayer-node-linux-amd64/third_party/genvm/config/genvm-module-llm.yaml 
@@ -82,18 +84,19 @@ nano $HOME/genlayer-node-linux-amd64/third_party/genvm/config/genvm-module-llm.y
 Set up validator key
 #### Remember your password! You will need it to unlock your account when running the node
 ```
-$HOME/genlayer-node-linux-amd64/bin/genlayernode account new -c $HOME/genlayer-node-linux-amd64/configs/node/config.yaml --setup --password "YOUR_VALIDATOR_PASSWORD"
+$HOME/genlayer-node-linux-amd64/bin/genlayernode account new -c $HOME/genlayer-node-linux-amd64/configs/node/config.yaml --setup --password "YOUR_PASSWORD"
 ```
 ## Install docker & docker-compose
 ```
 wget -q -O docker.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/docker.sh && chmod +x docker.sh && sudo /bin/bash docker.sh
 ```
-Run the WebDriver Container
+## Run the WebDriver Container
 ```
 cd $HOME/genlayer-node-linux-amd64
 docker compose up -d # Starts the WebDriver needed by the GenVM web module
 ```
-## Create service
+## Running the node
+Create service
 ```
 cat <<EOL > /lib/systemd/system/genlayerd.service
 [Unit]
@@ -107,7 +110,7 @@ Group=root
 Environment=RUST_BACKTRACE=1
 Environment=RUST_LOG=info
 WorkingDirectory=$HOME
-ExecStart=$HOME/genlayer-node-linux-amd64/bin/genlayernode run -c $(pwd)/configs/node/config.yaml --password "YOUR_VALIDATOR_PASSWORD"
+ExecStart=$HOME/genlayer-node-linux-amd64/bin/genlayernode run -c $(pwd)/configs/node/config.yaml --password "YOUR_PASSWORD"
 Restart=always
 
 [Install]
@@ -120,10 +123,47 @@ sudo systemctl enable genlayerd
 sudo systemctl daemon-reload
 sudo systemctl restart genlayerd && journalctl -fu genlayerd
 ```
-## Logs
->- View the logs from the running service: journalctl -f -u genlayerd
->- Check the node is running: sudo systemctl status genlayerd.service
->- Stop your node: sudo systemctl stop genlayerd.service
->- Start your node: sudo systemctl start genlayerd.service
+## DONE
+# Useful commands
+## Logs & Monitoring
+> View the logs from the running service: 
+```
+journalctl -f -u genlayerd
+```
+> Check the node is running: 
+```
+sudo systemctl status genlayerd.service
+```
+> Stop your node: 
+```
+sudo systemctl stop genlayerd.service
+```
+> Start your node: 
+```
+sudo systemctl start genlayerd.service
+```
+> Check WebDriver log: 
+```
+docker logs -f --tail 100 genlayer-node-webdriver
+```
+## Backing Up Your Validator Key
+```
+./bin/genlayernode account export \
+--password "your node password" \
+--address "your validator address" \
+--passphrase "your backup encryption passphrase" \
+--path "/path/to/your/secure/backup.key" \
+-c $(pwd)/configs/node/config.yaml
+```
+## Importing (Restoring) Your Validator Key
+```
+./bin/genlayernode account import \
+  --password "your node password" \
+  --passphrase "your backup encryption passphrase" \
+  --path "/path/to/your/secure/backup.key" \
+  -c $(pwd)/configs/node/config.yaml \
+  --setup
+```
+
 
 Question: <a href="https://t.me/nodesrunnerguruchat" target="_blank">NodesRunner Chat</a>
