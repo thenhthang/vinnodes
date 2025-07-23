@@ -15,9 +15,8 @@ Official documentation:
 Explorer:
 >- https://genlayer-testnet.explorer.caldera.xyz
 ```diff
--> Currently the GenLayer Testnet is permissioned. You can apply to be selected by filling out the following form:
+- Currently the GenLayer Testnet is permissioned. You can apply to be selected by filling out the following form: https://docs.google.com/forms/d/e/1FAIpQLSc7YujY6S6knB9XC8kL-2wsgNHrweqULstgc-OOMERlRsfg0A/viewform
 ```
-https://docs.google.com/forms/d/e/1FAIpQLSc7YujY6S6knB9XC8kL-2wsgNHrweqULstgc-OOMERlRsfg0A/viewform
 
 ## Hardware Requirements 
 Recommended
