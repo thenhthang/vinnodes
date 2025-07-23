@@ -56,7 +56,7 @@ Precompilation
 $HOME/genlayer-node-linux-amd64/third_party/genvm/bin/genvm precompile
 ```
 ## Setting up vars
-- You need to set up an LLM for your node to use to provide answers to natural language prompts. You can use any LLM you wish, however the quality of its answers will affect the performance of your node.
+>- You need to set up an LLM for your node to use to provide answers to natural language prompts. You can use any LLM you wish, however the quality of its answers will affect the performance of your node.
 >- Get free Heurist API Key by using the referral code: "genlayer": https://dev-api-form.heurist.ai/
 ```
 cd $HOME
