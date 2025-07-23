@@ -1,5 +1,5 @@
 <p style="font-size:14px" align="right">
-<a href="https://t.me/vinnodes" target="_blank">Join our telegram <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/></a>
+<a href="https://t.me/nodesrunnerguru" target="_blank">Join our telegram <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/></a>
 <a href="https://discord.gg/dvNSrwyU" target="_blank">Join our discord <img src="https://user-images.githubusercontent.com/50621007/176236430-53b0f4de-41ff-41f7-92a1-4233890a90c8.png" width="30"/></a>
 <a href="https://vinnodes.com" target="_blank">Visit our website <img src="https://github.com/thenhthang/vinnodes/blob/main/content/logo.jpg?raw=true" width="30"/></a>
 </p>
@@ -15,8 +15,9 @@ Official documentation:
 Explorer:
 >- https://genlayer-testnet.explorer.caldera.xyz
 ```diff
-- Currently the GenLayer Testnet is permissioned. You can apply to be selected by filling out the following form: https://docs.google.com/forms/d/e/1FAIpQLSc7YujY6S6knB9XC8kL-2wsgNHrweqULstgc-OOMERlRsfg0A/viewform
+- Currently the GenLayer Testnet is permissioned. You can apply to be selected by filling out the following form: 
 ```
+https://docs.google.com/forms/d/e/1FAIpQLSc7YujY6S6knB9XC8kL-2wsgNHrweqULstgc-OOMERlRsfg0A/viewform
 
 ## Hardware Requirements 
 Recommended
@@ -55,10 +56,8 @@ Precompilation (optional but recommended)
 $HOME/genlayer-node-linux-amd64/third_party/genvm/bin/genvm precompile
 ```
 ## Setting up vars
-
 - You need to set up an LLM for your node to use to provide answers to natural language prompts. You can use any LLM you wish, however the quality of its answers will affect the performance of your node.
 >- Get free Heurist API Key by using the referral code: "genlayer": https://dev-api-form.heurist.ai/
-- 
 ```
 cd $HOME
 ZKSYNC_URL="https://genlayer-testnet.rpc.caldera.xyz/http"
@@ -69,7 +68,7 @@ echo "export ZKSYNC_WEBSOCKET_URL=$ZKSYNC_WEBSOCKET_URL" >> $HOME/.bash_profile
 echo "export HEURISTKEY=$HEURISTKEY" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
-Config node
+Config node:
 ```
 sed -i "s|^\( *zksyncurl: *\).*|\1\"$ZKSYNC_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
 sed -i "s|^\( *zksyncwebsocketurl: *\).*|\1\"$ZKSYNC_WEBSOCKET_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
@@ -81,7 +80,7 @@ Config LLM provider :
 ```
 nano $HOME/genlayer-node-linux-amd64/third_party/genvm/config/genvm-module-llm.yaml 
 ```
-Set up validator key
+Set up validator key:
 #### Remember your password! You will need it to unlock your account when running the node
 ```
 $HOME/genlayer-node-linux-amd64/bin/genlayernode account new -c $HOME/genlayer-node-linux-amd64/configs/node/config.yaml --setup --password "YOUR_PASSWORD"
@@ -96,7 +95,7 @@ cd $HOME/genlayer-node-linux-amd64
 docker compose up -d # Starts the WebDriver needed by the GenVM web module
 ```
 ## Running the node
-Create service
+Create service:
 ```
 cat <<EOL > /lib/systemd/system/genlayerd.service
 [Unit]
