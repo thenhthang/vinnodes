@@ -51,7 +51,7 @@ cd $HOME
 tar -xzvf genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
 
 ```
-Precompilation (optional but recommended)
+Precompilation
 ```
 $HOME/genlayer-node-linux-amd64/third_party/genvm/bin/genvm precompile
 ```
@@ -124,7 +124,7 @@ sudo systemctl restart genlayerd && journalctl -fu genlayerd
 ```
 ## DONE
 # Useful commands
-## Logs & Monitoring
+### Logs & Monitoring
 > View the logs from the running service: 
 ```
 journalctl -f -u genlayerd
@@ -145,7 +145,7 @@ sudo systemctl start genlayerd.service
 ```
 docker logs -f --tail 100 genlayer-node-webdriver
 ```
-## Backing Up Your Validator Key
+### Backing Up Your Validator Key
 ```
 ./bin/genlayernode account export \
 --password "your node password" \
@@ -154,7 +154,7 @@ docker logs -f --tail 100 genlayer-node-webdriver
 --path "/path/to/your/secure/backup.key" \
 -c $(pwd)/configs/node/config.yaml
 ```
-## Importing (Restoring) Your Validator Key
+### Importing (Restoring) Your Validator Key
 ```
 ./bin/genlayernode account import \
   --password "your node password" \
