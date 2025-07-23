@@ -109,7 +109,7 @@ Group=root
 Environment=RUST_BACKTRACE=1
 Environment=RUST_LOG=info
 WorkingDirectory=$HOME
-ExecStart=$HOME/genlayer-node-linux-amd64/bin/genlayernode run -c $(pwd)/configs/node/config.yaml --password "YOUR_PASSWORD"
+ExecStart=$HOME/genlayer-node-linux-amd64/bin/genlayernode run -c $HOME/genlayer-node-linux-amd64/configs/node/config.yaml --password "YOUR_PASSWORD"
 Restart=always
 
 [Install]
