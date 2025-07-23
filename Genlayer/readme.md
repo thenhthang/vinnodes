@@ -38,13 +38,13 @@ Check for the latest version
 curl -s "https://storage.googleapis.com/storage/v1/b/gh-af/o?prefix=genlayer-node/bin/amd64" \
 | grep -o '"name": *"[^"]*"' \
 | sed -n 's/.*\/\(v[^/]*\)\/.*/\1/p' \
-| sort -ru \
-| head -n1
+| sort -ru
 ```
 Download the latest version
 ```
-export version=v0.3.6 # set your desired version here
-wget https://storage.googleapis.com/gh-af/genlayer-node/bin/amd64/${version}/genlayer-node-linux-amd64-${version}.tar.gz -O $HOME/genlayer-node-${LATEST_VERSION}.tar.gz
+LATEST_VERSION=v0.3.6 # set your desired version here
+export version=$LATEST_VERSION 
+wget https://storage.googleapis.com/gh-af/genlayer-node/bin/amd64/${version}/genlayer-node-linux-amd64-${version}.tar.gz -O $HOME/genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
 cd $HOME
 tar -xzvf genlayer-node-linux-amd64-${version}.tar.gz
 
@@ -60,7 +60,7 @@ Configuration node
 cd $HOME
 ZKSYNC_URL="https://genlayer-testnet.rpc.caldera.xyz/http"
 ZKSYNC_WEBSOCKET_URL="wss://genlayer-testnet.rpc.caldera.xyz/ws"
-HEURISTKEY="YOUR_KEY"
+HEURISTKEY="YOUR_HEURIST_API_KEY"
 echo "export ZKSYNC_URL=$ZKSYNC_URL" >> $HOME/.bash_profile
 echo "export ZKSYNC_WEBSOCKET_URL=$ZKSYNC_WEBSOCKET_URL" >> $HOME/.bash_profile
 echo "export HEURISTKEY=$HEURISTKEY" >> $HOME/.bash_profile
@@ -71,118 +71,59 @@ Config node
 sed -i "s|^\( *zksyncurl: *\).*|\1\"$ZKSYNC_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
 sed -i "s|^\( *zksyncwebsocketurl: *\).*|\1\"$ZKSYNC_WEBSOCKET_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
 ```
-Config LLM provider : Disable (enable: false) every provider but HEURIST.
+Config LLM provider :
+```diff
+At this stage, select one LLM and set all other to disabled.
+Disable (enable: false) every provider but HEURIST.
+```
 ```
 nano $HOME/genlayer-node-linux-amd64/third_party/genvm/config/genvm-module-llm.yaml 
 ```
-
-## Update packages
+Set up validator key
+#### Remember your password! You will need it to unlock your account when running the node
 ```
-sudo apt update && sudo apt upgrade -y
+$HOME/genlayer-node-linux-amd64/bin/genlayernode account new -c $HOME/genlayer-node-linux-amd64/configs/node/config.yaml --setup --password "YOUR_VALIDATOR_PASSWORD"
 ```
-## Install dependencies
+## Install docker & docker-compose
 ```
-sudo apt install curl tar wget clang pkg-config protobuf-compiler libssl-dev jq build-essential protobuf-compiler bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+wget -q -O docker.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/docker.sh && chmod +x docker.sh && sudo /bin/bash docker.sh
 ```
-## Install Rust
+Run the WebDriver Container
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source ~/.cargo/env
-rustup default stable
-rustup update
-rustup update nightly
-rustup target add wasm32-unknown-unknown --toolchain nightly
-```
-## Download and build binaries
-```
-git clone https://github.com/availproject/avail.git
-cd avail
-mkdir -p data
-git checkout v1.11.0.0
-cargo build --release -p data-avail
-sudo cp $HOME/avail/target/release/data-avail /usr/local/bin
+cd $HOME/genlayer-node-linux-amd64
+docker compose up -d # Starts the WebDriver needed by the GenVM web module
 ```
 ## Create service
 ```
-sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
+cat <<EOL > /lib/systemd/system/genlayerd.service
 [Unit]
-Description=Avail Validator
-After=network-online.target
+Description=GenLayer Node
+After=network.target
 
 [Service]
-User=$USER
-ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
+LimitNOFILE=4294967296
+User=root
+Group=root
+Environment=RUST_BACKTRACE=1
+Environment=RUST_LOG=info
+WorkingDirectory=$HOME
+ExecStart=$HOME/genlayer-node-linux-amd64/bin/genlayernode run -c $(pwd)/configs/node/config.yaml --password "YOUR_VALIDATOR_PASSWORD"
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
-EOF
+EOL
 ```
 ## Register and start service
 ```
+sudo systemctl enable genlayerd
 sudo systemctl daemon-reload
-sudo systemctl enable availd
-sudo systemctl restart availd && sudo journalctl -u availd -f -o cat
+sudo systemctl restart genlayerd && journalctl -fu genlayerd
 ```
 ## Logs
->- View the logs from the running service: journalctl -f -u availd.service
->- Check the node is running: sudo systemctl status availd.service
->- Stop your avail node: sudo systemctl stop availd.service
->- Start your avail node: sudo systemctl start availd.service
-## Update from old version to v1.10.0.0
-Step 1
-```
-sudo systemctl stop availd
-cd avail/data/chains/avail_goldberg_testnet
-rm -rf db
-rm -rf network
-mkdir db
-mkdir network
-cd db
-mkdir full
-cd full
-curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C .
-cd
-```
-Step 2
-```
-wget -O avail-update.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-update.sh && chmod +x avail-update.sh && ./avail-update.sh
-```
-Step 3: After full sync (Please check you node is full sync before execute this step
-Find your node on https://telemetry.avail.tools
-```
-sudo systemctl stop availd
-```
-```
-sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
-[Unit]
-Description=Avail Validator
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$(which data-avail) -d `pwd`/data --chain goldberg --validator --name $NODENAME
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-```
-sudo systemctl start availd
-```
-## Update from old version to v1.11.0.0
-```
-wget -O avail-update.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-update.sh && chmod +x avail-update.sh && ./avail-update.sh
-```
-### Before you can become an active validator, you need to bond your funds to your node. 
->- Stake your validator: https://docs.availproject.org/operate/validator/staking
-## Step 2: Create wallet and Set Identity
-## Step 3: Control your full node account
->- Step 2 and step 3 read guide here: https://github.com/thenhthang/vinnodes/blob/main/Avail/How%20to%20participate%20Avail%20incentivized%20testnet.md
+>- View the logs from the running service: journalctl -f -u genlayerd
+>- Check the node is running: sudo systemctl status genlayerd.service
+>- Stop your node: sudo systemctl stop genlayerd.service
+>- Start your node: sudo systemctl start genlayerd.service
 
 Question: <a href="https://t.me/nodesrunnerguruchat" target="_blank">NodesRunner Chat</a>
