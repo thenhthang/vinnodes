@@ -80,4 +80,9 @@ $HOME/genlayerlogs.sh
 ```
 ![alt text](image-1.png)
 
-### The log file is located at /tmp/genlayer-logs*.tar.gz
+The log file is located at /tmp/genlayer-logs*.tar.gz
+
+Download file:
+```
+scp root@SERVER_IP:/tmp/genlayer-logs-20250723-20250729.tar.gz ./genlayer-logs-20250723-20250729.tar.gz
+```
