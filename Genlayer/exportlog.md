@@ -1,4 +1,4 @@
-## Create a bash file genlayerlogs.sh
+## Create a Bash file named genlayerlogs.sh
 ```
 cat > "$HOME/genlayerlogs.sh" <<'EOF'
 #!/bin/bash
@@ -65,10 +65,12 @@ echo "Script has been created at: $HOME/genlayerlogs.sh"
 echo "Run it with: bash $HOME/genlayerlogs.sh"
 ```
 ## Create Cron Job
+Automatically execute the `genlayerlog.sh` file once a week at 1:00 AM on Friday.
+Open the current user's cron editor:
 ```
 sudo crontab -e
 ```
-### Automatically execute the `genlayerlog.sh` file once a week at 1:00 AM on Friday.
+Add the following line to the file to schedule the task:
 ```
 0 1 * * 5 $HOME/genlayerlogs.sh
 ```
