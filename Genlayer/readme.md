@@ -60,8 +60,8 @@ $HOME/genlayer-node-linux-amd64/third_party/genvm/bin/genvm precompile
 >- Get free Heurist API Key by using the referral code: "genlayer": https://dev-api-form.heurist.ai/
 ```
 cd $HOME
-ZKSYNC_URL="https://genlayer-testnet.rpc.caldera.xyz/http"
-ZKSYNC_WEBSOCKET_URL="wss://genlayer-testnet.rpc.caldera.xyz/ws"
+ZKSYNC_URL="YOUR_URL"
+ZKSYNC_WEBSOCKET_URL="YOUR_URL"
 HEURISTKEY="YOUR_HEURIST_API_KEY"
 echo "export ZKSYNC_URL=$ZKSYNC_URL" >> $HOME/.bash_profile
 echo "export ZKSYNC_WEBSOCKET_URL=$ZKSYNC_WEBSOCKET_URL" >> $HOME/.bash_profile
