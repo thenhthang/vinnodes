@@ -1,6 +1,11 @@
 ## Install docker & docker-composr
 ## Install grafana
 Login ip:3000; admin/adim
+Add plugin Infinity 
+Connection/Add new connection/Infinity
+Add new Data source
+Conneciton/Data source/Add new Data source/Infinity
+
 ## Install prometheus
 Config
 sudo nano /etc/prometheus/prometheus.yml
