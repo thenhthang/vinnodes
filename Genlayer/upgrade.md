@@ -35,6 +35,7 @@ sed -i "s|^\( *zksyncurl: *\).*|\1\"$ZKSYNC_URL\"|" $HOME/genlayer-node-linux-am
 sed -i "s|^\( *zksyncwebsocketurl: *\).*|\1\"$ZKSYNC_WEBSOCKET_URL\"|" $HOME/genlayer-node-linux-amd64/configs/node/config.yaml
 ```
 Update LLM config
+- At this stage, select one LLM and set all other to disabled. Disable (enable: false) every provider but HEURIST.
 ```
 sed -i '/comput3:/,/enabled:/s/enabled: true/enabled: false/' \
 $HOME/test/third_party/genvm/config/genvm-module-llm.yaml
