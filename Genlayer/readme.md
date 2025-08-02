@@ -46,7 +46,7 @@ curl -s "https://storage.googleapis.com/storage/v1/b/gh-af/o?prefix=genlayer-nod
 Download the latest version
 ```
 LATEST_VERSION=v0.3.6 # set your desired version here
-wget https://storage.googleapis.com/gh-af/genlayer-node/bin/amd64/${version}/genlayer-node-linux-amd64-${version}.tar.gz -O $HOME/genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
+wget https://storage.googleapis.com/gh-af/genlayer-node/bin/amd64/${version}/genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz -O $HOME/genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
 cd $HOME
 tar -xzvf genlayer-node-linux-amd64-${LATEST_VERSION}.tar.gz
 
