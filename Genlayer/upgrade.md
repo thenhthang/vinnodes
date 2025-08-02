@@ -1,4 +1,5 @@
-Set vars
+## This guide helps you update your GenLayer node from version v0.3.0 or later to v0.3.7 while preserving all previously synchronized data.
+Set vars (if necessary)
 ```
 cd $HOME
 ZKSYNC_URL="YOUR_URL"
@@ -38,7 +39,7 @@ Update LLM config
 - At this stage, select one LLM and set all other to disabled. Disable (enable: false) every provider but HEURIST.
 ```
 sed -i '/comput3:/,/enabled:/s/enabled: true/enabled: false/' \
-$HOME/test/third_party/genvm/config/genvm-module-llm.yaml
+$HOME/genlayer-node-linux-amd64/third_party/genvm/config/genvm-module-llm.yaml
 ```
 Start node
 ```
