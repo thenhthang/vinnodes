@@ -15,8 +15,42 @@ Config
 ```
 sudo nano /etc/prometheus/prometheus.yml
 ```
-UI: http://:9090
+```
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
 
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+    scrape_timeout: 5s
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: node
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default.
+    static_configs:
+      - targets: ['135.181.240.229:9100']
+  - job_name: genlayer
+    static_configs:
+      - targets: [135.181.240.229:9153]
+```
+UI: http://:9090
+## Install node exporter
+```
+docker run -d \
+  --net="host" \
+  --pid="host" \
+  -v "/:/host:ro,rslave" \
+  quay.io/prometheus/node-exporter:latest \
+  --path.rootfs=/host
+```
+```
+```
 
 ## Firewall
 sudo ufw allow 9090
@@ -29,3 +63,4 @@ sudo ufw reload
 sudo journalctl -u node-health.service -f
 sudo journalctl -u prometheus -f
 sudo journalctl -u grafana-server -f
+sudo systemctl restart prometheus
