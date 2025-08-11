@@ -1,7 +1,8 @@
 
+![Uploading image.png…]()
 ## Firewall
 ```
-sudo ufw enabled
+sudo ufw enable
 sudo ufw allow 9153
 sudo ufw allow 9090
 sudo ufw allow 9092
@@ -17,15 +18,18 @@ wget -q -O docker.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/
 ```
 docker run -d -p 3000:3000 --name=grafana grafana/grafana-enterprise
 ```
-UI: http://IP:3000
+Grafane UI: http://YOUR_IP:3000
 Login: admin/adim
-Add plugin Infinity
 
+Install Infinity plugin :
 Connection/Add new connection/Infinity
 
-Add new Data source
+Add new Data source:
+
 Conneciton/Data source/Add new Data source/Infinity
-Add Allowed hosts
+Setting:
+Add Allowed hosts: Setting/Security/Allowed hosts/Enter your node IP
+Example: http://NODE_IP:9153/health
 
 ## Install node exporter
 ```
@@ -75,9 +79,10 @@ Prometheus UI: http://:9090
 ## Create new dashboard
 
 Download dashboard.json file: https://raw.githubusercontent.com/thenhthang/vinnodes/55c2094a743e9797c69923b183581541e826851a/Genlayer/dashboard.json
-Login to Grafana and follow step: Dashboard/New/NewDahboard/Importboard/Upload dashboard JSON file/Choose file dashboard.json/Import
 
+Login to Grafana and follow step: 
 
+Dashboard/New/NewDahboard/Importboard/Upload dashboard JSON file/Choose file dashboard.json/Import
 
 ## Log
 ```
