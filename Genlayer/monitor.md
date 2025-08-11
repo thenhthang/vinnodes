@@ -1,5 +1,5 @@
+<img width="1167" height="575" alt="image" src="https://github.com/user-attachments/assets/4ff507bc-b3f4-4a68-b146-c1f05b967a3c" />
 
-![Uploading image.png…]()
 ## Firewall
 ```
 sudo ufw enable
