@@ -1,4 +1,5 @@
 <img width="1167" height="575" alt="image" src="https://github.com/user-attachments/assets/4ff507bc-b3f4-4a68-b146-c1f05b967a3c" />
+## You can install Grafana and Prometheus on a different server from the one running the Genlayer node, or on the same server.
 
 ## Firewall
 ```
@@ -10,7 +11,7 @@ sudo ufw allow 3000
 sudo ufw allow 9100
 sudo ufw reload
 ```
-## Install docker & docker-composr
+## Install docker & docker-compose
 ```
 wget -q -O docker.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/docker.sh && chmod +x docker.sh && sudo /bin/bash docker.sh
 ```
@@ -19,15 +20,16 @@ wget -q -O docker.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/
 docker run -d -p 3000:3000 --name=grafana grafana/grafana-enterprise
 ```
 Grafane UI: http://YOUR_IP:3000
+
 Login: admin/adim
 
-Install Infinity plugin :
+**Install Infinity plugin :**
 Connection/Add new connection/Infinity
 
-Add new Data source:
+**Add new Data source:**
 
 Conneciton/Data source/Add new Data source/Infinity
-Setting:
+_Setting:_
 Add Allowed hosts: Setting/Security/Allowed hosts/Enter your node IP
 Example: http://NODE_IP:9153/health
 
@@ -74,7 +76,7 @@ scrape_configs:
     static_configs:
       - targets: ['YOUR_NODE_IP:9153']
 ```
-Prometheus UI: http://:9090
+Prometheus UI: http://YOUR_IP:9090
 
 ## Create new dashboard
 
