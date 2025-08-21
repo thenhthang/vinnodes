@@ -97,20 +97,24 @@ docker compose up -d # Starts the WebDriver needed by the GenVM web module
 ## Running the node
 Create service:
 ```
-cat <<EOL > /lib/systemd/system/genlayerd.service
+cat <<EOL > /lib/systemd/system/genlayerd.service    
 [Unit]
 Description=GenLayer Node
 After=network.target
 
 [Service]
-LimitNOFILE=4294967296
+LimitNOFILE=1048576
 User=root
 Group=root
 Environment=RUST_BACKTRACE=1
 Environment=RUST_LOG=info
-WorkingDirectory=$HOME
-ExecStart=$HOME/genlayer-node-linux-amd64/bin/genlayernode run -c $HOME/genlayer-node-linux-amd64/configs/node/config.yaml --password "YOUR_PASSWORD"
-Restart=always
+Environment=HEURISTKEY=YOUR_HEURISTKEY
+WorkingDirectory=/root/genlayer-node-linux-amd64
+ExecStart=/root/genlayer-node-linux-amd64/bin/genlayernode run \
+  -c /root/genlayer-node-linux-amd64/configs/node/config.yaml \
+  --password "YOUR_PASSWORD"
+Restart=on-failure
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
