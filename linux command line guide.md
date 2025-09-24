@@ -70,3 +70,8 @@ sudo systemctl restart rsyslog
 sudo systemctl restart systemd-journald
 ```
 chỉnh sửa tệp cấu hình /etc/logrotate.conf
+
+### liệt kê các process bằng nohup
+```
+ps -eo pid,tty,cmd | grep -v tty
+```
