@@ -173,6 +173,9 @@ echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex |
 # Useful commands
 
 ### Check node status 
+```
+source <(curl -s https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/OG/check_block_validator.sh)
+```
 ```bash
 0gchaind status | jq .sync_info
 ```
