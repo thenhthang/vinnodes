@@ -29,11 +29,12 @@ The script saves the topic name as an environment variable, so you won’t be as
 https://notify.vinnodes.com/docs/
 
 <img width="765" height="293" alt="image" src="https://github.com/user-attachments/assets/4aa4b568-3827-4209-a7d8-2e0d453e4955" />
+
 Steps:
-Install the ntfy app (Android / iOS / Web)
-Open the app
-Subscribe to a topic
-Enter the same topic name you used when running the script
+- Install the ntfy app (Android / iOS / Web)
+- Open the app
+- Subscribe to a topic
+- Enter the same topic name you used when running the script
 
 <img width="1079" height="1310" alt="image" src="https://github.com/user-attachments/assets/6a4dea80-c5ad-4566-afea-d1ffede6096e" />
 
