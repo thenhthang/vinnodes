@@ -1,3 +1,5 @@
+<img width="500" height="1000" alt="image" src="https://github.com/user-attachments/assets/12c3cded-819b-43cb-a62e-00d3939e42e2" />
+
 ## Create bash file
 > Download the monitoring script that checks your node status and sends notifications via NTFY:
 ```
