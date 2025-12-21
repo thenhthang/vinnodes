@@ -40,4 +40,16 @@ server {
     }
 }
 ```
-
+## Kiểm tra lỗi cấu hình
+```
+sudo nginx -t
+```
+## Restart nginx
+```
+sudo systemctl reload nginx
+```
+## Stop, Start
+```
+sudo systemctl stop nginx
+sudo systemctl start nginx
+```
