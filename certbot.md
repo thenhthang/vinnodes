@@ -12,6 +12,7 @@ cd /etc/nginx/sites-enabled/
 ```
 > Mỗi website là một file, có thể gộp chung 1 file
 <img width="599" height="59" alt="image" src="https://github.com/user-attachments/assets/d229a33a-e8ee-4623-b1cd-3e89f0e321be" />
+
 > Tạo file config cho website
 ```
 server {
