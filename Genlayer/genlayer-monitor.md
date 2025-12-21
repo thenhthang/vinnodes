@@ -60,5 +60,7 @@ if [ -z "$TOPICNAME" ] && [ -f "$TOPIC_FILE" ]; then
 fi
 curl -d "Backup successful 😀" https://ntfy.sh/$TOPICNAME
 ```
+<img width="1070" height="130" alt="image" src="https://github.com/user-attachments/assets/abf3f733-85d4-43cd-bb86-0e92e28ba4bb" />
+
 
 
