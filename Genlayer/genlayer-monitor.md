@@ -16,12 +16,9 @@ On the first run, the script will ask you to enter a topic name for notification
 <img width="520" height="52" alt="image" src="https://github.com/user-attachments/assets/4b58630e-9d41-43b5-9782-9d4503d1300f" />
 
 Note:
-
-The topic name is your personal notification channel. 
-
-Remember this topic name, as you will use it again when installing the app. 
-
-The script saves the topic name as an environment variable, so you won’t be asked again on future runs. 
+- The topic name is your personal notification channel.
+- Remember this topic name, as you will use it again when installing the app.
+- The script saves the topic name as an environment variable, so you won’t be asked again on future runs.
 
 
 ## Install App to Receive Notifications
@@ -40,11 +37,8 @@ Steps:
 
 # Done
 From now on:
-
-The script continuously monitors your node status. 
-
-You will receive an instant notification if your node goes down. 
-
-You can run the script via cron to enable 24/7 monitoring. 
+- The script continuously monitors your node status. 
+- You will receive an instant notification if your node goes down. 
+- You can run the script via cron to enable 24/7 monitoring. 
 
 
