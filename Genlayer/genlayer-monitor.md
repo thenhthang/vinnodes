@@ -33,7 +33,7 @@ Steps:
 - Subscribe to a topic
 - Enter the same topic name you used when running the script
 
-<img width="1079" height="1310" alt="image" src="https://github.com/user-attachments/assets/6a4dea80-c5ad-4566-afea-d1ffede6096e" />
+<img width="7000" height="1000" alt="image" src="https://github.com/user-attachments/assets/6a4dea80-c5ad-4566-afea-d1ffede6096e" />
 
 # Done
 From now on:
