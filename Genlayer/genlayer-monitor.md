@@ -3,7 +3,7 @@
 ## Create bash file
 > Download the monitoring script that checks your node status and sends notifications via NTFY:
 ```
-wget https://example.com/genlayer-alert.sh
+wget https://raw.githubusercontent.com/thenhthang/vinnodes/refs/heads/main/Genlayer/genlayer-alert.sh
 ```
 > Make the script executable:
 ```
