@@ -29,7 +29,7 @@ fi
 mkdir -p /etc/genlayer
 echo "$TOPICNAME" > "$TOPIC_FILE"
 
-NTFY_URL="https://notify.vinnodes.com/$TOPICNAME"
+NTFY_URL="https://ntfy.sh/$TOPICNAME"
 HEALTH_URL="http://localhost:9153/health"
 # NTFY_URL="https://notify.vinnodes.com/$IP"
 # NTFY_URL="https://notify.vinnodes.com/genlayer"
