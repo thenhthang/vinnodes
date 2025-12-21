@@ -39,6 +39,17 @@ Steps:
 From now on:
 - The script continuously monitors your node status. 
 - You will receive an instant notification if your node goes down. 
-- You can run the script via cron to enable 24/7 monitoring. 
+- You can run the script via cron to enable 24/7 monitoring.
+
+# Cron job: run every 2 minutes
+> Open crontab editor
+```
+sudo crontab -e
+```
+> Add the cron job
+```
+*/2 * * * * $HOME/genlayer-alert.sh >> /var/log/genlayer-health.log 2>&1
+```
+
 
 
