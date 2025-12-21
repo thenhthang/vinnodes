@@ -52,6 +52,13 @@ sudo crontab -e
 ```
 */2 * * * * $HOME/genlayer-alert.sh >> /var/log/genlayer-health.log 2>&1
 ```
-
+# Test notify
+```
+TOPIC_FILE="/etc/genlayer/topic"
+if [ -z "$TOPICNAME" ] && [ -f "$TOPIC_FILE" ]; then
+  TOPICNAME=$(cat "$TOPIC_FILE")
+fi
+curl -d "Backup successful 😀" https://ntfy.sh/$TOPICNAME
+```
 
 
